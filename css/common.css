@@ -90,12 +90,4 @@ html {
 
 .common-frame {
   padding: 0 var(--space-2x-large);
-  background-color: white;
-}
-
-/* 공통 css 작성 */
-/* pc 기본 여백 3rem */
-.common-frame {
-    padding: 0 var(--space-2x-large);
-    background-color: white;
 }
