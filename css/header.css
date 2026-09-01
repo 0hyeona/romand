@@ -53,13 +53,21 @@
 .gnb {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   gap: var(--space-normal);
   height: var(--space-2x-large);
 }
 
+.gnb > li {
+  display: flex;
+}
+
+
 .gnb > li > a {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   font-size: var(--fs-body1);
   font-weight: var(--fw2);
   color: var(--pink-0);
@@ -101,6 +109,12 @@
   font-weight: var(--fw2);
   color: var(--gray-9);
 }
+.gnb2depths section:first-child h4:hover {
+  font-size: var(--fs--h4);
+  font-weight: var(--fw2);
+  color: var(--main);
+  cursor: pointer;
+}
 
 /* .gnb2depths 안에 있는 section 중에서, 첫 번째 자식이 아닌 것들 */
 .gnb2depths section:not(:first-child) h4 {
@@ -108,6 +122,14 @@
   font-weight: var(--fw2);
   color: var(--gray-9);
   margin-bottom: 1.5rem;
+}
+
+.gnb2depths section:not(:first-child) h4:hover {
+    font-size: var(--fs--h4);
+    font-weight: var(--fw2);
+    color: var(--main);
+    margin-bottom: 1.5rem;
+    cursor: pointer;
 }
 
 /* .gnb2depths 안의 section 안의 ul 안의 li 중에서, 바로 앞에 li가 있는 것들 */
