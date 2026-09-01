@@ -1,0 +1,93 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide .pc {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide .pad,
+.swiper-slide .mobile {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  z-index: 10;
+}
+
+.swiper-pagination-bullet {
+  width: 24px;
+  height: 24px;
+  background-color: transparent !important;  /* 기본 배경색 제거 */
+  background-image: url("../img/heart-1-pc.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 1 !important;  
+  border-radius: 0;       /* 기본 원형 border-radius 제거 */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: transparent !important;
+  background-image: url("../img/heart-2-pc.svg");
+}
+
+@media (max-width: 1024px) {
+  .hero-slider .swiper-slide .pc {
+    display: none;
+  }
+  .hero-slider .swiper-slide .pad {
+    display: block;
+  }
+  .hero-slider .swiper-slide .mobile {
+    display: none;
+  }
+
+  .swiper-pagination-bullet {
+    background-image: url("../img/heart-1-pad.svg");
+  }
+
+  .swiper-pagination-bullet-active {
+    background-image: url("../img/heart-2-pad.svg");
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-slider .swiper-slide .pc {
+    display: none;
+  }
+  .hero-slider .swiper-slide .pad {
+    display: none;
+  }
+  .hero-slider .swiper-slide .mobile {
+    display: block;
+  }
+
+  .swiper-pagination-bullet {
+    background-image: url("../img/heart-1-mobile.svg");
+  }
+
+  .swiper-pagination-bullet-active {
+    background-image: url("../img/heart-2-mobile.svg");
+  }
+}
