@@ -30,6 +30,15 @@ else {
 const gnbTabs = document.querySelectorAll('.gnb-smart > li');
 const gnbItems = document.querySelectorAll('.gnb-smart-list > li');
 
+// 처음 로딩 시 기본 선택 상태를 NEW로 맞춤
+if (gnbTabs.length && gnbItems.length) {
+  gnbTabs.forEach(item => item.classList.remove('on'));
+  gnbItems.forEach(item => item.classList.remove('on'));
+
+  gnbTabs[0].classList.add('on');
+  gnbItems[0].classList.add('on');
+}
+
 gnbTabs.forEach((tab, index) => {
   tab.addEventListener('click', function (e) {
     e.preventDefault();
