@@ -386,7 +386,11 @@
 
   .smart-overlay-menu-top {
     height: 3.4285rem;
-}
+  }
+
+  .smart-overlay-menu-1 .common-frame .btn-close {
+    right: var(--space-normal);
+  }
 
   .smart-overlay-menu-2 .common-frame {
     display: flex;
@@ -407,7 +411,10 @@
   .gnb2depths-smart .common-frame {
     grid-template-columns: repeat(2, 1fr);
   }
-    .smart-overlay-menu-top {
+  .smart-overlay-menu-top {
     height: 2.66666rem;
-}
+  }
+  .smart-overlay-menu-1 .common-frame .btn-close {
+    right: 1rem;
+  }
 }
