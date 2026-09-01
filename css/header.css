@@ -42,11 +42,12 @@
 
 .header-bottom > .common-frame {
   background: linear-gradient(
-    rgb(255, 217, 223, 30) 0%,
-    rgb(255, 217, 223, 60) 20%,
-    #ffccd4 50%,
-    rgb(255, 217, 223, 60) 80%,
-    rgb(255, 217, 223, 30) 100%
+    to right,
+    rgba(255, 217, 223, 0.3) 0%,
+    rgba(255, 217, 223, 0.6) 20%,
+    rgba(255, 204, 212, 1) 50%,
+    rgba(255, 217, 223, 0.6) 80%,
+    rgba(255, 217, 223, 0.3) 100%
   );
 }
 
@@ -61,7 +62,6 @@
 .gnb > li {
   display: flex;
 }
-
 
 .gnb > li > a {
   display: flex;
@@ -125,11 +125,11 @@
 }
 
 .gnb2depths section:not(:first-child) h4:hover {
-    font-size: var(--fs--h4);
-    font-weight: var(--fw2);
-    color: var(--main);
-    margin-bottom: 1.5rem;
-    cursor: pointer;
+  font-size: var(--fs--h4);
+  font-weight: var(--fw2);
+  color: var(--main);
+  margin-bottom: 1.5rem;
+  cursor: pointer;
 }
 
 /* .gnb2depths 안의 section 안의 ul 안의 li 중에서, 바로 앞에 li가 있는 것들 */
@@ -218,11 +218,12 @@
 /* gnb-smart 탭 */
 .smart-overlay-menu-top {
   background: linear-gradient(
-    rgb(255, 217, 223, 30) 0%,
-    rgb(255, 217, 223, 60) 20%,
-    #ffccd4 50%,
-    rgb(255, 217, 223, 60) 80%,
-    rgb(255, 217, 223, 30) 100%
+    to right,
+    rgba(255, 217, 223, 0.3) 0%,
+    rgba(255, 217, 223, 0.6) 20%,
+    rgba(255, 204, 212, 1) 50%,
+    rgba(255, 217, 223, 0.6) 80%,
+    rgba(255, 217, 223, 0.3) 100%
   );
   display: flex;
   justify-content: center;
@@ -258,15 +259,49 @@
   padding: 0;
 }
 
+/* 탭에서 이미 NEW/SHOP/EVENT/ABOUT US를 보여주므로 리스트 안 타이틀은 숨김 */
+.gnb-smart-title {
+  display: none;
+}
+
 .gnb2depths-smart {
   display: none;
+  background-color: var(--gray-0);
 }
 
 .gnb-smart-list > li.on .gnb2depths-smart {
   display: block;
 }
 
+.gnb2depths-smart .common-frame {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 2rem var(--space-2x-large);
+  padding: 2rem var(--space-2x-large);
+}
 
+.gnb2depths-smart section h4 {
+  font-size: var(--fs-body1);
+  font-weight: var(--fw2);
+  color: var(--gray-9);
+  padding-bottom: var(--space-1x-small);
+  margin-bottom: var(--space-normal);
+  border-bottom: 1px solid var(--pink-2);
+}
+
+.gnb2depths-smart section ul li + li {
+  margin-top: var(--space-normal);
+}
+
+.gnb2depths-smart section ul li a {
+  font-size: var(--fs-body1);
+  font-weight: var(--fw1);
+  color: var(--gray-9);
+}
+
+.gnb2depths-smart section ul li a:hover {
+  color: var(--main);
+}
 
 /* 반응형 pad */
 @media (max-width: 1024px) {
