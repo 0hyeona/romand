@@ -16,17 +16,20 @@
       <div class="header-top">
         <div class="common-frame back">
           <div class="logo">
-            <a href="#">
+            <a href="./index.html">
               <img src="./img/logo.svg" alt="롬앤 메인 로고" />
             </a>
           </div>
-          <div class="lnb">
-            <ul class="user-menu">
-              <li>
-                <a href="#">
-                  <img src="./img/icon-search.svg" alt="검색 아이콘" />
-                </a>
-              </li>
+          <ul class="user-menu">
+              <div class="lnb">
+                <div class="search-box" aria-label="검색창">
+                  <label class="search-field" aria-label="검색어 입력">
+                    <input type="text" placeholder="검색어를 입력해주세요" />
+                  </label>
+                  <button class="search-toggle" type="button" aria-label="검색 열기">
+                    <img src="./img/icon-search.svg" alt="검색 아이콘" />
+                  </button>
+                </div>
               <li>
                 <a href="#">
                   <img src="./img/icon-cart.svg" alt="장바구니 아이콘" />
@@ -256,23 +259,22 @@
       </div>
       <div class="smart-overlay-menu-2">
         <div class="common-frame">
-          <ul class="user-menu">
-            <li>
-              <a href="#">
+          <div class="user-menu">
+            <div class="search-box" aria-label="검색창">
+              <label class="search-field" aria-label="검색어 입력">
+                <input type="text" placeholder="검색어를 입력해주세요" />
+              </label>
+              <button class="search-toggle" type="button" aria-label="검색 열기">
                 <img src="./img/icon-search.svg" alt="검색 아이콘" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./img/icon-cart.svg" alt="장바구니 아이콘" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="./img/icon-profile.svg" alt="마이페이지 아이콘" />
-              </a>
-            </li>
-          </ul>
+              </button>
+            </div>
+            <a href="#">
+              <img src="./img/icon-cart.svg" alt="장바구니 아이콘" />
+            </a>
+            <a href="#">
+              <img src="./img/icon-profile.svg" alt="마이페이지 아이콘" />
+            </a>
+          </div>
         </div>
       </div>
       <div class="smart-overlay-menu-top">
