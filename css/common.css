@@ -64,18 +64,23 @@
 h1 {
   font-size: var(--fs-h1);
 }
+
 h2 {
   font-size: var(--fs-h2);
 }
+
 h3 {
   font-size: var(--fs-h3);
 }
+
 h4 {
   font-size: var(--fs-h4);
 }
+
 h5 {
   font-size: var(--fs-h5);
 }
+
 h6 {
   font-size: var(--fs-h6);
 }
@@ -88,6 +93,20 @@ html {
   font-weight: var(--fw1);
 }
 
+/* 데스크탑 패딩 */
 .common-frame {
   padding: 0 var(--space-2x-large);
+}
+
+/* 반응형 패딩 */
+@media (max-width:1024px) {
+  .common-frame {
+    padding: 0 var(--space-x-large);
+  }
+}
+
+@media (max-width:768px) {
+  .common-frame {
+    padding: 0 var(--space-normal);
+  }
 }
