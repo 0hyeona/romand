@@ -51,3 +51,20 @@ gnbTabs.forEach((tab, index) => {
   });
 });
 
+// 검색 버튼을 클릭했을 경우 아이콘 옆에 검색창이 나타나도록 처리
+const searchBoxes = document.querySelectorAll('.search-box');
+
+searchBoxes.forEach((searchBox) => {
+  const searchToggle = searchBox.querySelector('.search-toggle');
+  const searchInput = searchBox.querySelector('.search-field input');
+
+  if (searchToggle) {
+    searchToggle.addEventListener('click', function () {
+      searchBox.classList.toggle('is-open');
+
+      if (searchBox.classList.contains('is-open') && searchInput) {
+        setTimeout(() => searchInput.focus(), 120);
+      }
+    });
+  }
+});
