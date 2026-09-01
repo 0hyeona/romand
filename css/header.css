@@ -21,13 +21,65 @@
 
 .user-menu {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.user-menu li a {
+.user-menu .lnb {
+  gap: 1rem;
+}
+.user-menu a {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-field {
+  display: flex;
+  align-items: center;
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    width 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.search-field input {
+  width: 100%;
+  background: var(--main);
+  color: var(--gray-0);
+  font-size: var(--fs-body1);
+  padding: 0 1rem;
+  outline: none;
+  border: none;
+  margin-left: 2rem;
+  text-align: right;
+}
+
+.search-field input::placeholder {
+  color: var(--gray-0);
+}
+
+.search-toggle {
+  border: none;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.search-box.is-open .search-field {
+  width: 18rem;
+  opacity: 1;
 }
 
 .gnb {
@@ -182,6 +234,7 @@
   transform: translateX(100%);
   transition: all 0.6s ease 0s;
   z-index: 101;
+  
 }
 
 .smart-overlay-menu.on {
@@ -213,6 +266,7 @@
   justify-content: flex-end;
   align-items: center;
   background-color: var(--main);
+  gap: 1rem;
 }
 
 /* gnb-smart 탭 */
@@ -328,6 +382,20 @@
   .logo img {
     height: 5rem;
   }
+
+  .smart-overlay-menu-top {
+    height: 3.4285rem;
+}
+
+  .smart-overlay-menu-2 .common-frame {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .smart-overlay-menu-2 .common-frame .user-menu  {
+    gap: 1rem;
+  }
 }
 
 /* 반응형 mobile */
@@ -338,4 +406,7 @@
   .gnb2depths-smart .common-frame {
     grid-template-columns: repeat(2, 1fr);
   }
+    .smart-overlay-menu-top {
+    height: 2.66666rem;
+}
 }
