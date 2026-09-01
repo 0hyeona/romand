@@ -61,6 +61,7 @@
   border: none;
   margin-left: 2rem;
   text-align: right;
+  font-family: 'Sweet';
 }
 
 .search-field input::placeholder {
