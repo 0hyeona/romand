@@ -23,11 +23,13 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  gap:1rem;
 }
 
 .user-menu .lnb {
   gap: 1rem;
 }
+
 .user-menu a {
   display: flex;
   flex-direction: column;
@@ -93,15 +95,13 @@
   position: relative;
 }
 
-.header-bottom > .common-frame {
-  background: linear-gradient(
-    to right,
-    rgba(255, 217, 223, 0.3) 0%,
-    rgba(255, 217, 223, 0.6) 20%,
-    rgba(255, 204, 212, 1) 50%,
-    rgba(255, 217, 223, 0.6) 80%,
-    rgba(255, 217, 223, 0.3) 100%
-  );
+.header-bottom>.common-frame {
+  background: linear-gradient(to right,
+      #FFD9DF 0%,
+      #FFD9DF 20%,
+      #FFCCD4 50%,
+      #FFD9DF 80%,
+      #FFD9DF 100%);
 }
 
 .gnb {
@@ -112,11 +112,11 @@
   height: var(--space-2x-large);
 }
 
-.gnb > li {
+.gnb>li {
   display: flex;
 }
 
-.gnb > li > a {
+.gnb>li>a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,8 +128,8 @@
   font-family: 'MaruBuri';
 }
 
-.gnb > li.on > a,
-.gnb > li:hover > a {
+.gnb>li.on>a,
+.gnb>li:hover>a {
   color: var(--main);
   font-family: 'MaruBuri';
 }
@@ -145,13 +145,13 @@
   z-index: 10;
 }
 
-.gnb > li:hover .gnb2depths,
-.gnb > li.on .gnb2depths {
+.gnb>li:hover .gnb2depths,
+.gnb>li.on .gnb2depths {
   display: block;
 }
 
 /* ALL 메뉴(첫 번째 항목)는 내부 컨텐츠가 없으므로 드롭다운을 표시하지 않음 */
-.gnb > li:first-child .gnb2depths {
+.gnb>li:first-child .gnb2depths {
   display: none !important;
 }
 
@@ -167,6 +167,7 @@
   font-weight: var(--fw2);
   color: var(--gray-9);
 }
+
 .gnb2depths section:first-child h4:hover {
   font-size: var(--fs--h4);
   font-weight: var(--fw2);
@@ -191,7 +192,7 @@
 }
 
 /* .gnb2depths 안의 section 안의 ul 안의 li 중에서, 바로 앞에 li가 있는 것들 */
-.gnb2depths section ul li + li {
+.gnb2depths section ul li+li {
   margin-top: var(--space-normal);
 }
 
@@ -240,7 +241,7 @@
   transform: translateX(100%);
   transition: all 0.6s ease 0s;
   z-index: 101;
-  
+
 }
 
 .smart-overlay-menu.on {
@@ -277,14 +278,12 @@
 
 /* gnb-smart 탭 */
 .smart-overlay-menu-top {
-  background: linear-gradient(
-    to right,
-    rgba(255, 217, 223, 0.3) 0%,
-    rgba(255, 217, 223, 0.6) 20%,
-    rgba(255, 204, 212, 1) 50%,
-    rgba(255, 217, 223, 0.6) 80%,
-    rgba(255, 217, 223, 0.3) 100%
-  );
+  background: linear-gradient(to right,
+      #FFD9DF 0%,
+      #FFD9DF 20%,
+      #FFCCD4 50%,
+      #FFD9DF 80%,
+      #FFD9DF 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -292,7 +291,6 @@
 
 .gnb-smart {
   display: flex;
-  height: 4.285rem;
   gap: 1rem;
   font-weight: var(--fw2);
   padding: 0 1.5rem;
@@ -307,7 +305,7 @@
   font-size: var(--fs-body1);
 }
 
-.gnb-smart > li.on > a {
+.gnb-smart>li.on>a {
   color: var(--main);
 }
 
@@ -329,7 +327,7 @@
   background-color: var(--gray-0);
 }
 
-.gnb-smart-list > li.on .gnb2depths-smart {
+.gnb-smart-list>li.on .gnb2depths-smart {
   display: block;
 }
 
@@ -349,7 +347,7 @@
   border-bottom: 1px solid var(--pink-2);
 }
 
-.gnb2depths-smart section ul li + li {
+.gnb2depths-smart section ul li+li {
   margin-top: var(--space-normal);
 }
 
@@ -368,6 +366,7 @@
   html {
     font-size: var(--fs-pad);
   }
+
   main {
     margin-top: 5rem;
   }
@@ -394,17 +393,29 @@
   }
 
   .smart-overlay-menu-1 .common-frame .btn-close {
-    right: var(--space-normal);
+    right: var(--space-1x-small);
+  }
+
+  .smart-overlay-menu-2 .common-frame .smart-overlay-menu-top {
+    display: flex;
+    background: linear-gradient(to right,
+        #FFD9DF 0%,
+        #FFD9DF 20%,
+        #FFCCD4 50%,
+        #FFD9DF 80%,
+        #FFD9DF 100%) !important;
+  }
+
+  .smart-overlay-menu-1 .common-frame .btn-close {
+    gap: 1rem;
+    right: 2rem;
   }
 
   .smart-overlay-menu-2 .common-frame {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-  }
-
-  .smart-overlay-menu-2 .common-frame .user-menu  {
-    gap: 1rem;
+    padding-right: 2rem;
   }
 }
 
@@ -413,13 +424,28 @@
   html {
     font-size: var(--fs-mobile);
   }
+
   .gnb2depths-smart .common-frame {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .smart-overlay-menu-top {
     height: 2.66666rem;
   }
+
+  .smart-header .common-frame .btn-menu {
+    gap: 1rem;
+    right: 1rem;
+  }
+
   .smart-overlay-menu-1 .common-frame .btn-close {
     right: 1rem;
+  }
+
+  .smart-overlay-menu-2 .common-frame {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
   }
 }
