@@ -6,11 +6,13 @@
 
 .sns-img-section .pc {
     margin: 0 auto;
+    padding: 6rem;
 }
 
 .sns-img-section .pad,
 .sns-img-section .mobile {
     display: none;
+    padding: 6rem;
 
 }
 
