@@ -150,6 +150,11 @@
   display: block;
 }
 
+/* ALL 메뉴(첫 번째 항목)는 내부 컨텐츠가 없으므로 드롭다운을 표시하지 않음 */
+.gnb > li:first-child .gnb2depths {
+  display: none !important;
+}
+
 .gnb2depths .common-frame {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
