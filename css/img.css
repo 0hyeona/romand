@@ -1,0 +1,12 @@
+.sns-img-section {
+    display: flex;
+    justify-content: center;
+}
+.sns-img-section .pc{ 
+    display:block;
+    padding: 6rem;
+}
+.sns-img-section .pad, .sns-img-section .mobile{ 
+    display:none;
+    
+}
