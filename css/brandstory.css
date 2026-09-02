@@ -1,4 +1,4 @@
-html{
+html {
     font-size: var(--fs-pc);
 }
 
@@ -34,16 +34,80 @@ html{
     font-weight: var(--fw2);
 }
 
-.brand-story p{
+.brand-story p {
     text-align: center;
-    color: var(--gray-5 );
+    color: var(--gray-5);
     line-height: var(--lh2);
 }
-.brand-story figure{
+
+.brand-story figure {
     margin: 1.5rem 0;
+    width: 400px;
+    aspect-ratio: 400/700;
 }
 
-.brand-story a{
+.brand-story figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.brand-story a {
     color: var(--pink-5);
     border-bottom: 1px solid var(--pink-5);
+}
+
+@media(max-width:1024px) {
+    html {
+        font-size: var(--fs-pad);
+    }
+
+    .brand-story {
+        max-width: 1024px;
+    }
+
+    .brand-story .line {
+        max-height: 90px;
+    }
+
+    .brand-story .line img {
+        aspect-ratio: 1/90;
+    }
+
+    .brand-story figure {
+        width: 300px;
+    }
+}
+
+@media(max-width:768px) {
+    html {
+        font-size: var(--fs-mobile);
+    }
+
+    .brand-story {
+        max-width: 768px;
+        padding: 1rem;
+    }
+
+    .brand-story .line {
+        max-height: 80px;
+    }
+
+    .brand-story .line img {
+        aspect-ratio: 1/80;
+    }
+
+    .brand-story h3 {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .brand-story h1 {
+        font-size: 1.583rem;
+        text-align: center;
+    }
+
+    .brand-story figure {
+        width: 200px;
+    }
 }
