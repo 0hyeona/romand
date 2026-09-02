@@ -1,0 +1,39 @@
+/* 구현되는지 보려고 높이 올려놓은 것! 합칠때 지워야합니다! */
+body {
+    height: 10000px;
+}
+
+/* 스크롤 올리기 스타일 */
+.btn-top {
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    background-color: var(--pink-0);
+    color: var(--pink-8);
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: all .5s ease 0s;
+    transform: translateY(10vh);
+}
+
+.btn-top.on {
+    transform: translateY(0%);
+}
+
+@media(max-width:1024px) {
+    html {
+        font-size: var(--fs-pad);
+
+    }
+}
+
+@media(max-width:768px) {
+    html {
+        font-size: var(--fs-mobile);
+    }
+}

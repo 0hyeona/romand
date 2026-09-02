@@ -2,7 +2,6 @@
 /* PC 푸터 (1025px 이상) */
 footer {
     width: 100%;
-    max-width: 1920px;
     min-height: 330px;
     margin: 0 auto;
     background-color: var(--gray-5);
