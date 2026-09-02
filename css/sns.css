@@ -22,7 +22,12 @@
     .sns-img-section .pad {
         display: block;
     }
+
+    .sns-img-section .mobile {
+        display: none;
+    }
 }
+
 @media (max-width: 768px) {
     .sns-img-section .pc {
         display: none;
@@ -31,6 +36,7 @@
     .sns-img-section .pad {
         display: none;
     }
+
     .sns-img-section .mobile {
         display: block;
     }
