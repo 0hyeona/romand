@@ -1,15 +1,10 @@
+/* swiper 전체 사이즈 지정 */
 .swiper {
   width: 100%;
   height: 100%;
 }
 
-.swiper-slide {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* pc 버전 */
 .swiper-slide .pc {
   display: block;
   width: 100%;
@@ -17,6 +12,7 @@
   object-fit: cover;
 }
 
+/* pc 버전에서는 pad/mobile 안 보이게 처리 - 반응형에서 display: block으로 설정 */
 .swiper-slide .pad,
 .swiper-slide .mobile {
   display: none;
@@ -25,26 +21,27 @@
   object-fit: cover;
 }
 
-.swiper-pagination {
+/* 페이지네이션 */
+.hero-slider .swiper-pagination {
   position: absolute;
-  bottom: 1.25rem;
+  bottom: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: .5rem;
+  gap: 0.5rem;
   z-index: 10;
 }
 
 .swiper-pagination-bullet {
   width: 24px;
   height: 24px;
-  background-color: transparent !important;  /* 기본 배경색 제거 */
+  background-color: transparent !important; /* 기본 배경색 제거 */
   background-image: url("../img/heart-1-pc.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 1 !important;  
-  border-radius: 0;       /* 기본 원형 border-radius 제거 */
+  opacity: 1 !important;
+  border-radius: 0; /* 기본 원형 border-radius 제거 */
 }
 
 .swiper-pagination-bullet-active {
@@ -70,6 +67,10 @@
   .swiper-pagination-bullet-active {
     background-image: url("../img/heart-2-pad.svg");
   }
+
+  .hero-slider .swiper-pagination {
+    bottom: 0.71428rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -89,5 +90,9 @@
 
   .swiper-pagination-bullet-active {
     background-image: url("../img/heart-2-mobile.svg");
+  }
+
+  .hero-slider .swiper-pagination {
+    bottom: 0.8333rem;
   }
 }
