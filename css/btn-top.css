@@ -1,8 +1,3 @@
-/* 구현되는지 보려고 높이 올려놓은 것! 합칠때 지워야합니다! */
-body {
-    height: 10000px;
-}
-
 /* 스크롤 올리기 스타일 */
 .btn-top {
     position: fixed;
@@ -18,7 +13,7 @@ body {
     border-radius: 100%;
     cursor: pointer;
     transition: all .5s ease 0s;
-    transform: translateY(10vh);
+    transform: translateY(0vh);
 }
 
 .btn-top.on {
