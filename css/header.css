@@ -19,6 +19,14 @@
   justify-content: flex-end;
 }
 
+header.pc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
 .user-menu {
   display: flex;
   align-items: center;
@@ -229,6 +237,9 @@
   line-height: 0;
 }
 
+.header-bottom.on {
+  display: none;
+}
 /* 패드 / 모바일용 전체 메가메뉴 */
 .smart-overlay-menu {
   position: fixed;
