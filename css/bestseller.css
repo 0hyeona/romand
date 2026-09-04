@@ -1,4 +1,4 @@
-.bestseller {
+.bestseller-card-list-wrap {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
     box-sizing: border-box;
 }
 
-.bestseller h1 {
+.bestseller-card-list-wrap h1 {
     font-family: 'MaruBuri', sans-serif;
     font-weight: var(--fw2);
     font-size: var(--fs--h1);
@@ -40,6 +40,7 @@
     width: 100%;
     overflow: hidden;
     cursor: pointer;
+    margin-bottom: 1rem;
 }
 
 .product-visual img {
@@ -94,6 +95,10 @@
 .product-name {
     font-weight: var(--fw2);
     font-size: var(--fs--h4);
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .price-original {
@@ -152,6 +157,9 @@
     max-width: 100%;
     margin: .5rem 0;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .color-scroll {
