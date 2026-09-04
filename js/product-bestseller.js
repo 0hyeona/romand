@@ -1,4 +1,4 @@
-const productArray = [
+let productArray = [
     {
         pid: 0,
         pname: '쥬시 플래시 립 오일(+롬앤 립 랜덤 1종 증정)',
