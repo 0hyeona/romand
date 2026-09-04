@@ -14,6 +14,7 @@
     cursor: pointer;
     transition: all .5s ease 0s;
     transform: translateY(0vh);
+    z-index: 160;
 }
 
 .btn-top.on {
