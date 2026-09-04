@@ -10,58 +10,44 @@
     <link rel="stylesheet" href="./css/reset.css">
 
     <!-- 가져가야할 코드 -->
-     <link rel="stylesheet" href="./css/bestseller.css">
+    <link rel="stylesheet" href="./css/bestseller.css">
+    <script src="./js/product-bestseller.js" defer></script>
+    <script src="./js/product-control.js" defer></script>
 </head>
 
 <body>
-    <div class="product-card">
-        <a href="상세페이지html" class="product-visual">
-            <img class="product-img" src="./img/lip-list-img-1.jpg" alt="제품 이미지">
-            <img class="product-img-model" src="./img/lip-list-model-img-1.png" alt="제품 모델 이미지">
-            <span class="rank">1</span>
-        </a>
-
-        <div class="product-info">
-            <div class="product-txt">
-            <h2 class="product-name">글래스팅 멜팅 밤</h2>
-            <p class="price-original">13,000원</p>
-            <p class="discount">28%</p>
-            <p class="price-discount">9,400원</p>
-            </div>
-            <div class="color-chip">
-                <div class="color-scroll">
+    <div class="bestseller">
+        <h1>BEST SELLER</h1>
+        <ul class="product-card">
+            <li class="product-card-list">
+                <a href="#" class="product-visual">
+                    <span class="rank">1</span>
+                    <div>
+                        <img class="product-img" src="./img/lip-list-img-1.jpg" alt="제품 이미지">
+                        <img class="product-img-model" src="./img/lip-list-model-img-1.jpg" alt="제품 모델 이미지">
+                    </div>
+                </a>
+                <div class="product-txt">
+                    <h2 class="product-name">글래스팅 멜팅 밤</h2>
+                    <p class="price-original"><span>13,000</span>원</p>
+                    <div class="discount-txt">
+                        <p class="discount">28%</p>
+                        <p class="price-discount"><span>9,400</span>원</p>
+                    </div>
                 </div>
-            </div>
-            <div class="badges">
-            <span class="badge best">BEST</span>
-            <span class="badge new">NEW</span>
-            </div>
+                <div class="color-chip">
+                    <span class="color-scroll"></span>
+                </div>
+                <div class="badges">
+                    <span class="badge best">BEST</span>
+                    <span class="badge new">NEW</span>
+                </div>
+            </li>
+        </ul>
+        <div class="bestseller-btn">
+            <a href="#">VIEW MORE</a>
         </div>
     </div>
 </body>
-
-<ul class="sale">
-    <li>
-        <a href="#">
-            <figure><img src="./img/con3-1.jpg" alt="특가상품1"></figure>
-            <div class="sale-txt">
-                <h4 class="title-1">모노 패브릭 소파</h4>
-                <div class="pay-frame">
-                    <div class="pay-original">
-                        <span>2,180,000</span>원
-                    </div>
-                    <div class="pay-discount">
-                        <div class="discount">25%</div>
-                        <div class="pay"><b>1,635,000</b>원</div>
-                    </div>
-                </div>
-                <span class="like-badge noab">
-                    <img src="./img/heart-2.svg" alt="좋아요하트">
-                    <p>100</p>
-                </span>
-            </div>
-        </a>
-    </li>
-</ul>
 
 </html>
