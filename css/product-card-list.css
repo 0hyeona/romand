@@ -1,4 +1,4 @@
-.bestseller-card-list-wrap {
+.product-card-list-wrap {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -6,11 +6,11 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    padding: 3rem 1rem;
+    padding: 6rem 3rem;
     box-sizing: border-box;
 }
 
-.bestseller-card-list-wrap h1 {
+.product-card-list-wrap h1 {
     font-family: 'MaruBuri', sans-serif;
     font-weight: var(--fw2);
     font-size: var(--fs--h1);
@@ -90,6 +90,8 @@
 .product-txt {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .product-name {
@@ -99,6 +101,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    text-align: center;
 }
 
 .price-original {
@@ -155,17 +158,13 @@
 .color-chip {
     width: 164px;
     max-width: 100%;
-    margin: .5rem 0;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: .5rem auto;
 }
 
 .color-scroll {
     display: flex;
     align-items: center;
-    width: 100%;
     min-height: 1rem;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -179,6 +178,11 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: pan-y;
+}
+
+/* JS가 붙인 is-short 클래스로 5개 이하의 컬러칩만 영역 안에서 가운데 정렬 */
+.color-chip.is-short .color-scroll {
+    justify-content: center;
 }
 
 .color-dot {
@@ -200,12 +204,7 @@
     opacity: 0;
     transform: scale(0);
     pointer-events: none;
-    transition:
-        width .3s ease,
-        flex-basis .3s ease,
-        margin .3s ease,
-        opacity .3s ease,
-        transform .3s ease;
+    transition: all .5s ease 0s
 }
 
 .color-more,
@@ -262,6 +261,13 @@
     display: none;
     width: 0;
     height: 0;
+}
+
+.badges{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
 }
 
 .badge {
@@ -342,3 +348,4 @@
     }
 
 }
+    
