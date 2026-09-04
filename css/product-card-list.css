@@ -1,0 +1,351 @@
+.product-card-list-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 6rem 3rem;
+    box-sizing: border-box;
+}
+
+.product-card-list-wrap h1 {
+    font-family: 'MaruBuri', sans-serif;
+    font-weight: var(--fw2);
+    font-size: var(--fs--h1);
+}
+
+.product-card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1rem, 1.2vw, 1.5rem);
+    justify-content: center;
+    align-items: start;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.product-card-list {
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 444/673;
+}
+
+.product-visual {
+    aspect-ratio: 444/522;
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.product-visual img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 1s ease 0s;
+}
+
+.product-img {
+    z-index: 2;
+    opacity: 1;
+}
+
+.product-visual:hover .product-img {
+    opacity: 0;
+}
+
+.product-img-model {
+    z-index: 1;
+    opacity: 0;
+}
+
+.product-visual:hover .product-img-model {
+    opacity: 1;
+}
+
+
+.rank {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 2.875rem;
+    aspect-ratio: 1/1;
+    background: var(--pink-5);
+    color: #fff;
+    font-size: var(--fs--h4);
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+}
+
+.product-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-name {
+    font-weight: var(--fw2);
+    font-size: var(--fs--h4);
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.price-original {
+    color: var(--gray-4);
+}
+
+.price-original span {
+    text-decoration: line-through;
+}
+
+.discount-txt {
+    display: flex;
+    gap: .25rem
+}
+
+.discount {
+    font-weight: var(--fw2);
+    font-size: var(--fs--h4);
+    color: var(--main);
+}
+
+.price-discount {
+    font-size: var(--fs--h4);
+}
+
+.price-discount span {
+    font-weight: var(--fw2);
+}
+
+
+.bestseller-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bestseller-btn a {
+    padding: .5rem 2rem;
+    max-width: 160px;
+    aspect-ratio: 160/38;
+    background-color: var(--gray-0);
+    color: var(--pink-2);
+    font-weight: var(--fw2);
+    border: 1px solid var(--pink-5);
+}
+
+.bestseller-btn:hover a {
+    background-color: var(--pink-5);
+    color: var(--gray-0);
+
+}
+
+/* 처음에는 5개 컬러칩과 +Color만 표시하고, 펼치면 전체 컬러를 가로 스크롤로 확인하는 기능 */
+.color-chip {
+    width: 164px;
+    max-width: 100%;
+    overflow: hidden;
+    margin: .5rem auto;
+}
+
+.color-scroll {
+    display: flex;
+    align-items: center;
+    min-height: 1rem;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    overscroll-behavior-inline: contain;
+
+    /* 스크롤 기능은 유지하면서 하단 스크롤바와 드래그 중 텍스트 선택을 숨김 */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: pan-y;
+}
+
+/* JS가 붙인 is-short 클래스로 5개 이하의 컬러칩만 영역 안에서 가운데 정렬 */
+.color-chip.is-short .color-scroll {
+    justify-content: center;
+}
+
+.color-dot {
+    flex: 0 0 1rem;
+    width: 1rem;
+    height: 1rem;
+    margin-right: .25rem;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--chip-color);
+}
+
+/* 여섯 번째 이후 컬러는 접힌 상태에서 크기와 투명도를 0으로 만들어 숨김 */
+.extra-color {
+    flex-basis: 0;
+    width: 0;
+    margin-right: 0;
+    opacity: 0;
+    transform: scale(0);
+    pointer-events: none;
+    transition: all .5s ease 0s
+}
+
+.color-more,
+.color-close {
+    font-family: inherit;
+    font-size: var(--fs-body2);
+    flex: 0 0 auto;
+    min-width: max-content;
+    padding: .125rem .25rem;
+    border: 0;
+    background: transparent;
+    color: var(--gray-9);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.color-close {
+    display: none;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+/* is-open 상태에서 추가 컬러를 펼치고 가로 스크롤과 마지막 − 버튼을 활성화 */
+.color-chip.is-open .color-scroll {
+    overflow-x: auto;
+}
+
+/* 컬러칩을 클릭 드래그하는 동안 손으로 잡은 모양의 커서와 즉시 반응하는 스크롤 적용 */
+.color-chip.is-open .color-scroll.is-dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+}
+
+.color-chip.is-open .extra-color {
+    flex-basis: 1rem;
+    width: 1rem;
+    margin-right: .25rem;
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+.color-chip.is-open .color-more {
+    display: none;
+}
+
+.color-chip.is-open .color-close {
+    display: inline-block;
+}
+
+
+/* 크롬·엣지·사파리에서 하단 스크롤바를 숨기되 가로 스크롤 기능은 유지 */
+.color-scroll::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.badges{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.badge {
+    padding: .25rem .5rem;
+    border-radius: 1rem;
+    font-size: var(--fs-body2);
+    background: var(--pink-6);
+    color: #fff;
+    display: none;
+}
+
+.badge.new {
+    background: var(--pink-3);
+}
+
+.badge.on {
+    display: inline-block;
+}
+
+
+/* 반응형 */
+@media(max-width:1024px) {
+    html {
+        font-size: var(--fs-pad);
+    }
+
+    .product-card {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .product-card-list {
+        aspect-ratio: 230/402;
+    }
+
+    .product-visual {
+        aspect-ratio: 230/275;
+    }
+
+    .color-chip {
+        width: 136px;
+    }
+
+}
+
+@media(max-width:768px) {
+    html {
+        font-size: var(--fs-mobile);
+    }
+
+    .bestseller {
+        width: 100%;
+        padding: 3rem 1rem 0;
+    }
+
+    .product-card {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem 1rem;
+        height: auto;
+        justify-content: stretch;
+        align-items: start;
+    }
+
+    .product-card-list {
+        width: 100%;
+        max-width: none;
+        aspect-ratio: 183/379;
+    }
+
+    .product-visual {
+        aspect-ratio: 183/275;
+    }
+
+    .color-chip {
+        width: 119px;
+    }
+
+}
+    
