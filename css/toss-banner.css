@@ -1,0 +1,41 @@
+.banner-img {
+    padding: var(--space-2x-large) 0;
+}
+
+.pc {
+    display: block;
+}
+
+.pad, .mobile {
+    display: none;
+}
+
+.banner-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+@media (max-width : 1024px) {
+    .pad {
+        display: block;
+    }
+    .pc, .mobile {
+        display: none;
+    }
+}
+
+@media (max-width : 768px) {
+    .mobile {
+        display: block;
+    }
+    .pc, .pad {
+        display: none;
+    }
+
+    .mobile figure {
+        width: 100%;
+        margin: 0;
+    }
+}
