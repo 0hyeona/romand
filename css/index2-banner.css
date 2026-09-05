@@ -1,0 +1,57 @@
+.pad {
+    display: none;
+}
+
+.mo {
+    display: none;
+}
+
+.banner {
+    margin-top: 100px;
+}
+
+.banner figure {
+    max-height: 1000px;
+}
+
+.banner figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media(max-width:1024px) {
+    .pc {
+        display: none;
+    }
+
+    .pad {
+        display: block;
+    }
+
+    .mo {
+        display: none;
+    }
+
+    .banner {
+        margin-top: 70px;
+    }
+}
+
+@media(max-width:768px) {
+    .pc {
+        display: none;
+    }
+
+    .pad {
+        display: none;
+    }
+
+    .mo {
+        display: block;
+    }
+
+    .banner {
+        margin-top: 50px;
+    }
+}
