@@ -4,7 +4,7 @@ if (typeof window !== 'undefined') window.formatNumberWithCommas = formatNumberW
 const productCardUlTag = document.querySelector('.product-card');
 
 if (productCardUlTag) {
-    // GPT에서 추가한 내용: 컬러가 5개 이하인 상품에 is-short 클래스를 붙여 컬러칩 가운데 정렬에 사용
+    // 컬러가 5개 이하인 상품에 is-short 클래스를 붙여 컬러칩 가운데 정렬에 사용
     const result = productArray.map((product,) => `
         <li class="product-card-list">
             <a href="#" class="product-visual">
