@@ -1,0 +1,125 @@
+.option-label {
+  margin-bottom: 0.5rem;
+  color: var(--gray-9);
+  font-size: var(--fs--h4);
+}
+
+.option-trigger,
+.option-item {
+  width: 100%;
+  border: 1px solid var(--pink-1);
+  background-color: var(--gray-0);
+  color: var(--gray-9);
+  font: inherit;
+  text-align: left;
+}
+
+.option-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: var(--space-normal) var(--space-1x-large);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.option-trigger:hover,
+.option-item:hover {
+  border-color: var(--pink-1);
+  background-color: var(--pink-0);
+}
+
+.option-value {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--gray-6);
+  font-size: var(--fs--h4);
+}
+
+/* 열렸을 때 */
+.is-open .option-value {
+    color: var(--gray-9);
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.5rem;
+  padding: var(--space-normal) var(--space-1x-large);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: var(--fs--h4);
+}
+
+.option-color {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--gray-3);
+}
+
+.option-color-empty {
+  width: 24px;
+  height: 24px;
+}
+
+/* 옵션 색상 정보 */
+.option-color-pink {
+  background-color: var(--pink-5);
+}
+
+.option-color-light-pink {
+  background-color: var(--pink-2);
+}
+
+.option-color-dark-pink {
+  background-color: var(--pink-9);
+}
+
+/* 클릭 시 */
+.is-clicked .option-value {
+    color: var(--gray-9);
+}
+.is-clicked .option-select {
+    padding-bottom: var(--space-2x-large);
+}
+
+.is-clicked .option-box {
+    padding: var(--space-1x-large) var(--space-2x-large);
+    background-color: var(--gray-1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.is-clicked .option-box .pro-name {
+    font-weight: var(--fw2);
+    font-size: var(--fs--h2);
+    
+}
+.is-clicked .option-box .pro-desc {
+    font-size: var(--fs--h4);   
+}
+
+.is-clicked .option-box .pro-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.is-clicked .option-box .pro-list .counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+}
+
+.is-clicked .option-box .pro-list .price {
+    display: flex;
+    font-size: var(--fs--h4);
+    font-weight: var(--fw2);
+}
