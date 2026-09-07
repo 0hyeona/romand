@@ -1,0 +1,138 @@
+.list-header {
+    width: calc(100% - 6rem);
+    height: 64px;
+    border-radius: 200px;
+    background-color: var(--pink-0);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+    box-sizing: border-box;
+    font-weight: var(--fw2);
+    font-size: var(--fs--h4);
+}
+
+.total-p span {
+    color: var(--main);
+    padding-left: .2rem;
+}
+
+.list-header .align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.list-header .align span {
+    display: flex;
+    align-items: center;
+}
+
+.align {
+    cursor: pointer;
+}
+
+.align-list-box-wrap {
+    width: calc(100% - 6rem);
+    height: 310px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+    position: relative;
+}
+
+.align-list-box {
+    width: 140px;
+    height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--gray-6);
+    box-sizing: border-box;
+    font-size: var(--fs--h4);
+    color: var(--gray-5);
+    overflow: hidden;
+    opacity: 0;
+    transition: all .5s ease 0s;
+    position: absolute;
+    top: 0;
+    left: calc(100% - 12rem);
+    background-color: #fff;
+    z-index: 10;
+}
+
+.align-list-box.on {
+    height: 310px;
+    padding: .5rem 1rem;
+    opacity: 1;
+}
+
+.align-list-box li.on {
+    color: var(--pink-6);
+    font-weight: var(--fw2);
+}
+
+@media(max-width:1024px) {
+    html {
+        font-size: var(--fs-pad);
+    }
+
+    .list-header {
+        width: calc(100% - 4rem);
+    }
+
+    .list-header .align {
+        gap: 4px;
+    }
+
+    .align-list-box-wrap {
+        width: calc(100% - 4rem);
+        height: 260px;
+    }
+
+    .align-list-box {
+        width: 110px;
+        margin-right: 3rem;
+        left: calc(100% - 11rem);
+    }
+
+    .align-list-box.on {
+        height: 260px;
+    }
+}
+
+@media(max-width:768px) {
+    html {
+        font-size: var(--fs-mobile);
+    }
+
+    .list-header {
+        width: calc(100% - 2rem);
+        height: 48px;
+        font-size: 14px;
+    }
+
+    .list-header .align {
+        gap: 0;
+    }
+
+    .align-list-box-wrap {
+        width: calc(100% - 2rem);
+        height: 220px;
+    }
+
+    .align-list-box {
+        width: 80px;
+        margin-right: 3rem;
+        left: calc(100% - 10rem);
+        font-size: 14px;
+    }
+
+    .align-list-box.on {
+        height: 220px;
+    }
+}
