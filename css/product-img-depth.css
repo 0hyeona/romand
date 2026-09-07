@@ -32,7 +32,10 @@
     html {
         font-size: var(--fs-pad);
     }
-
+    
+    .img-depth{
+        padding: 0 6.857rem;
+    }
     .img-depth img {
         min-width: 102px;
     }
@@ -60,6 +63,9 @@
         scrollbar-width: none;
         cursor: grab;
         touch-action: pan-y;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        padding: 0;
     }
 
     .img-depth::-webkit-scrollbar {

@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    margin-top: -310px;
     padding: 6rem 3rem;
     box-sizing: border-box;
 }
@@ -263,7 +264,7 @@
     height: 0;
 }
 
-.badges{
+.badges {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -292,6 +293,10 @@
 @media(max-width:1024px) {
     html {
         font-size: var(--fs-pad);
+    }
+
+    .product-card-list-wrap {
+        margin-top: -260px;
     }
 
     .product-card {
@@ -323,6 +328,10 @@
         padding: 3rem 1rem 0;
     }
 
+    .product-card-list-wrap {
+        margin-top: -220px;
+    }
+
     .product-card {
         width: 100%;
         display: grid;
@@ -348,4 +357,3 @@
     }
 
 }
-    
