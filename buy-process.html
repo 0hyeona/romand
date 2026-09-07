@@ -14,8 +14,9 @@
     <!-- 구매 프로세스 -->
     <link rel="stylesheet" href="./css/buy-process.css">
 
-    <!-- <script src="./js/header.js" defer></script>
-    <script src="./js/btn-top.js" defer></script> -->
+    <link rel="stylesheet" href="./css/option.css" />
+    <script src="./js/option.js" defer></script>
+
 
     <!-- 스와이퍼 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
@@ -28,15 +29,15 @@
         <div class="common-frame product-detail-layout">
             <section class="product-gallery" aria-label="상품 이미지 갤러리">
                 <div class="big-img">
-                    <img src="./img/buy-1.png" alt="메인 상품 이미지">
+                    <img src="./img/buy-6.jpg" alt="메인 상품 이미지">
                 </div>
                 <div class="small-img-wrap">
                     <ul class="small-img-list" aria-label="상품 썸네일 목록">
-                        <li><img src="./img/buy-2.png" alt="썸네일 이미지 1"></li>
-                        <li><img src="./img/buy-3.png" alt="썸네일 이미지 2"></li>
-                        <li><img src="./img/buy-4.png" alt="썸네일 이미지 3"></li>
-                        <li><img src="./img/buy-5.png" alt="썸네일 이미지 4"></li>
-                        <li><img src="./img/buy-6.png" alt="썸네일 이미지 5"></li>
+                        <li><img src="./img/buy-1.jpg" alt="썸네일 이미지 1"></li>
+                        <li><img src="./img/buy-2.jpg" alt="썸네일 이미지 2"></li>
+                        <li><img src="./img/buy-3.jpg" alt="썸네일 이미지 3"></li>
+                        <li><img src="./img/buy-4.jpg" alt="썸네일 이미지 4"></li>
+                        <li><img src="./img/buy-5.jpg" alt="썸네일 이미지 5"></li>
                     </ul>
                 </div>
             </section>
@@ -45,24 +46,83 @@
                 <div class="product-header">
                     <p class="product-category">LIP</p>
                     <div class="product-title-wrap">
-                        <h1>메인 타이틀 입력해주세요</h1>
+                        <h1>롬앤 글래스팅 컬러 글로스</h1>
                         <div class="share-btn">
                             <img src="./img/share.jpg" alt="공유하기 아이콘">
                         </div>
                     </div>
                     <div class="product-price-box">
-                        <div class="original-price">300,000원</div>
+                        <div class="original-price">13,000원</div>
                         <div class="sale-row">
-                            <span class="discount-rate">30%</span>
-                            <span class="final-price">300,000원</span>
+                            <span class="discount-rate">28%</span>
+                            <span class="final-price">9,400원</span>
                         </div>
                     </div>
                 </div>
 
 
-                <div class="option-box">
-                    <div class="product-option">본품/리필/기타 정보</div>
-                </div>
+                <section class="option-demo">
+                    <div class="option-box stage-1">
+                        <p class="option-label">본품/리필/기타 정보</p>
+
+                        <div class="option-select">
+                            <button type="button" class="option-trigger" aria-label="옵션 선택 열기">
+                                <span class="option-color option-color-empty"></span>
+                                <span class="option-value">[필수] 옵션을 선택해주세요.</span>
+                                <span class="option-icon">
+                                    <img src="./img/down.svg" alt="열기" />
+                                </span>
+                            </button>
+
+                            <div class="option-list">
+                                <button type="button" class="option-item" data-name="피오니 발레">
+                                    <span class="option-color option-color-pink1"></span>
+                                    피오니 발레
+                                </button>
+                                <button type="button" class="option-item" data-name="더티 베이그">
+                                    <span class="option-color option-color-pink2"></span>
+                                    더티 베이그
+                                </button>
+                                <button type="button" class="option-item" data-name="로즈 핀치">
+                                    <span class="option-color option-color-pink3"></span>
+                                    로즈 핀치
+                                </button>
+                                <button type="button" class="option-item" data-name="그레이피 웨이">
+                                    <span class="option-color option-color-pink4"></span>
+                                    그레이피 웨이
+                                </button>
+                                <button type="button" class="option-item" data-name="딤 모브">
+                                    <span class="option-color option-color-pink5"></span>
+                                    딤 모브
+                                </button>
+                                <button type="button" class="option-item" data-name="디픈 무어">
+                                    <span class="option-color option-color-pink6"></span>
+                                    디픈 무어
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="option-summary">
+                            <div class="pro-name">
+                                <p>상품명</p>
+                            </div>
+                            <div class="pro-desc">
+                                <p>상품 정보</p>
+                            </div>
+                            <div class="pro-list">
+                                <div class="counter">
+                                    <img src="./img/minus.svg" alt="minus" />
+                                    <span>1</span>
+                                    <img src="./img/plus.svg" alt="plus" />
+                                </div>
+                                <div class="price">
+                                    <div class="money">9,400</div>
+                                    <div class="won">원</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 <div class="purchase-summary">
                     <p>총 금액</p>
@@ -70,8 +130,10 @@
                 </div>
 
                 <div class="purchase-actions">
-                    <div class="btn btn-secondary">장바구니</div>
-                    <div class="btn btn-primary">구매하기</div>
+                    <div class="btn btn-secondary">
+                        <a href="#">장바구니</a></div>
+                    <div class="btn btn-primary">
+                        <a href="#">구매하기</a></div>
                 </div>
             </div>
         </div>
