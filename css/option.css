@@ -5,7 +5,8 @@
 }
 
 .option-box {
-  width: 1109px;
+  width: 100%;
+  max-width: 1109px;
 }
 
 .option-select {
@@ -83,24 +84,23 @@
 
 /* 색상 정보 */
 .option-color-pink1 {
-  background-color: #E6858F;
+  background-color: #e6858f;
 }
 .option-color-pink2 {
-  background-color: #CE8573;
+  background-color: #ce8573;
 }
 .option-color-pink3 {
-  background-color: #CA6768;
+  background-color: #ca6768;
 }
 .option-color-pink4 {
-  background-color: #BB5E74;
+  background-color: #bb5e74;
 }
 .option-color-pink5 {
-  background-color: #CB6A69;
+  background-color: #cb6a69;
 }
 .option-color-pink6 {
-  background-color: #B45448;
+  background-color: #b45448;
 }
-
 
 .option-summary {
   display: none;
@@ -155,27 +155,11 @@
   font-size: var(--fs-body1);
   font-weight: var(--fw2);
 }
-.counter img { 
+.counter img {
   cursor: pointer;
 }
 .price {
   display: flex;
   font-size: var(--fs--h4);
   font-weight: var(--fw2);
-}
-
-@media (max-width:1024px) {
-  html {
-    font-size: var(--fs-pad);
-  }
-  .option-icon {
-    width: 20px;
-    height: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  html {
-    font-size: var(--fs-mobile);
-  }
 }
