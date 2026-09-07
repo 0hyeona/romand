@@ -30,6 +30,11 @@
   background-color: var(--pink-0);
 }
 
+.option-icon {
+  width: 24px;
+  height: 24px;
+}
+
 .option-value {
   flex: 1;
   overflow: hidden;
@@ -115,11 +120,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: .25rem;
+    gap: 14px;
+    color: var(--pink-9);
+    font-size:var(--fs-body1);
+    font-weight: var(--fw2);
 }
 
 .is-clicked .option-box .pro-list .price {
     display: flex;
     font-size: var(--fs--h4);
     font-weight: var(--fw2);
+}
+
+@media (max-width:1024px) {
+  html {
+    font-size: var(--fs-pad);
+  }
+  .option-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  html { 
+    font-size: var(--fs-mobile);
+  }
 }
