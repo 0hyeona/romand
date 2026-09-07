@@ -37,6 +37,12 @@
     width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
+    scrollbar-width: none;       /* 파이어폭스 */
+    -ms-overflow-style: none;    /* IE, 엣지 구버전 */
+}
+
+.small-img-wrap::-webkit-scrollbar {
+    display: none;   /* 크롬, 사파리, 엣지 */
 }
 
 .small-img-list {
