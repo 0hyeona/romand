@@ -65,6 +65,7 @@ const plusBtn = document.querySelector('.counter img[alt="plus"]');
 const desc = document.querySelector('.counter span');
 const counterBox = document.querySelector('.option-summary');
 const money = document.querySelector('.money');
+const totalAmount = document.querySelector('.purchase-summary p:last-child');
 
 const unitPrice = 9400;
 let cnt = 1;
@@ -82,6 +83,7 @@ function updateCnt() {
 
     const totalPrice = unitPrice * cnt;
     money.textContent = totalPrice.toLocaleString();
+    totalAmount.textContent = totalPrice.toLocaleString() + '원';
 }
 
 minusBtn.addEventListener('click', function () {
@@ -108,3 +110,4 @@ optionItems.forEach(function (item) {
 
 //  기능 추가해야될 것 
 // 1. 중복으로 선택한다면 여러 개 배열로 저장해서 담는 변수를 하나 만들 것
+// 2. 2번에서 밖에 누르거나 아이콘을 눌렀을 시 1번으로 변경되도록
