@@ -9,24 +9,39 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/font.css">
+  <link rel="stylesheet" href="./css/popup.css">
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/banner.css">
   <link rel="stylesheet" href="./css/brandstory.css">
   <link rel="stylesheet" href="./css/btn-top.css">
-  <!-- 베스트셀러 css 연결 후 지워주세용 -->
-   <link rel="stylesheet" href="./css/sns.css">
+  <link rel="stylesheet" href="./css/bestseller.css">
+  <link rel="stylesheet" href="./css/sns.css">
   <link rel="stylesheet" href="./css/footer.css">
   <!-- 스와이퍼 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css" />
   <!-- js 연결 -->
+  <script src="./js/popup.js" defer></script>
   <script src="./js/header.js" defer></script>
   <script src="./js/banner.js" defer></script>
   <script src="./js/btn-top.js" defer></script>
+  <script src="./js/product-bestseller.js" defer></script>
+  <script src="./js/product-bestseller-control.js" defer></script>
   <!-- 스와이퍼 -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
 </head>
 
 <body>
+  <!-- 메인 팝업 -->
+   <div class="modal"></div>
+  <div class="popup">
+    <figure>
+      <img src="./img/main-popup.jpg" alt="메인화면 신규가입 혜택 팝업 사진">
+    </figure>
+    <div class="popup-ctl">
+      <span>오늘 하루 보지않기</span>
+      <span id="popup-close">닫기</span>
+    </div>
+  </div>
   <!-- 데스크탑용 헤더 -->
   <header class="pc">
     <div class="header-top">
@@ -490,6 +505,269 @@
     </div>
 
     <!-- 베스트 셀러 -->
+    <div class="bestseller-card-list-wrap">
+      <h1>BEST SELLER</h1>
+      <ul class="product-card">
+        <li class="product-card-list">
+          <a href="#" class="product-visual">
+            <span class="rank">1</span>
+            <div>
+              <img class="product-img" src="./img/lip-list-img-1.jpg" alt="제품 이미지">
+              <img class="product-img-model" src="./img/lip-list-model-img-1.jpg" alt="제품 모델 이미지">
+            </div>
+          </a>
+          <div class="product-txt">
+            <h2 class="product-name">쥬시 플래시 립 오일(+롬앤 립 랜덤 1종 증정)</h2>
+            <p class="price-original"><span>14,000</span>원</p>
+            <div class="discount-txt">
+              <p class="discount">22%</p>
+              <p class="price-discount"><span>10,900</span>원</p>
+            </div>
+          </div>
+          <div class="color-chip">
+            <div class="color-scroll" aria-label="쥬시 플래시 립 오일(+롬앤 립 랜덤 1종 증정) 전체 컬러">
+
+              <button type="button" class="color-dot " style="--chip-color: #9A777E;" aria-label="1번 컬러"></button>
+
+              <button type="button" class="color-dot " style="--chip-color: #B1848C;" aria-label="2번 컬러"></button>
+
+              <button type="button" class="color-dot " style="--chip-color: #C999A1;" aria-label="3번 컬러"></button>
+
+              <button type="button" class="color-dot " style="--chip-color: #DCB4BA;" aria-label="4번 컬러"></button>
+
+              <button type="button" class="color-dot " style="--chip-color: #EAD8DC;" aria-label="5번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #724047;"
+                aria-label="6번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #864A51;"
+                aria-label="7번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #A55F68;"
+                aria-label="8번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #BD7580;"
+                aria-label="9번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #D08C96;"
+                aria-label="10번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #E2ABB3;"
+                aria-label="11번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #F1CED3;"
+                aria-label="12번 컬러"></button>
+
+
+
+              <button type="button" class="color-more" aria-expanded="false">+7Color</button>
+
+              <button type="button" class="color-close" aria-label="전체 컬러 접기">−</button>
+
+            </div>
+          </div>
+          <div class="badges">
+            <span class="badge best off">BEST</span>
+            <span class="badge new on">NEW</span>
+          </div>
+        </li>
+
+        <li class="product-card-list">
+          <a href="#" class="product-visual">
+            <span class="rank">2</span>
+            <div>
+              <img class="product-img" src="./img/lip-list-img-2.jpg" alt="제품 이미지">
+              <img class="product-img-model" src="./img/lip-list-model-img-2.jpg" alt="제품 모델 이미지">
+            </div>
+          </a>
+          <div class="product-txt">
+            <h2 class="product-name">롬앤 글래스팅 컬러 글로스 컬러</h2>
+            <p class="price-original"><span>13,000</span>원</p>
+            <div class="discount-txt">
+              <p class="discount">28%</p>
+              <p class="price-discount"><span>9,400</span>원</p>
+            </div>
+          </div>
+          <div class="color-chip">
+            <div class="color-scroll" aria-label="롬앤 글래스팅 컬러 글로스 컬러 전체 컬러">
+
+              <button type="button" class="color-dot " style="--chip-color: #734149;" aria-label="1번 컬러"></button>
+
+              <button type="button" class="color-dot " style="--chip-color: #92545C;" aria-label="2번 컬러"></button>
+
+              <button type="button" class="color-dot " style="--chip-color: #AE6A73;" aria-label="3번 컬러"></button>
+
+              <button type="button" class="color-dot " style="--chip-color: #D48F9A;" aria-label="4번 컬러"></button>
+
+              <button type="button" class="color-dot " style="--chip-color: #E8D5D9;" aria-label="5번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #B54D65;"
+                aria-label="6번 컬러"></button>
+
+
+
+              <button type="button" class="color-more" aria-expanded="false">+1Color</button>
+
+              <button type="button" class="color-close" aria-label="전체 컬러 접기">−</button>
+
+            </div>
+          </div>
+          <div class="badges">
+            <span class="badge best on">BEST</span>
+            <span class="badge new on">NEW</span>
+          </div>
+        </li>
+
+        <li class="product-card-list">
+          <a href="#" class="product-visual">
+            <span class="rank">3</span>
+            <div>
+              <img class="product-img" src="./img/lip-list-img-3.jpg" alt="제품 이미지">
+              <img class="product-img-model" src="./img/lip-list-model-img-3.jpg" alt="제품 모델 이미지">
+            </div>
+          </a>
+          <div class="product-txt">
+            <h2 class="product-name">글래스팅 멜팅 밤</h2>
+            <p class="price-original"><span>13,000</span>원</p>
+            <div class="discount-txt">
+              <p class="discount">28%</p>
+              <p class="price-discount"><span>9,400</span>원</p>
+            </div>
+          </div>
+          <div class="color-chip">
+            <div class="color-scroll" aria-label="글래스팅 멜팅 밤 전체 컬러">
+
+              <button type="button" class="color-dot " style="--chip-color: #82484B;" aria-label="1번 컬러"></button>
+
+              <button type="button" class="color-dot " style="--chip-color: #9C5858;" aria-label="2번 컬러"></button>
+
+              <button type="button" class="color-dot " style="--chip-color: #BA6F6A;" aria-label="3번 컬러"></button>
+
+              <button type="button" class="color-dot " style="--chip-color: #D68D82;" aria-label="4번 컬러"></button>
+
+              <button type="button" class="color-dot " style="--chip-color: #ECD6D1;" aria-label="5번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #C77965;"
+                aria-label="6번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #E3A18B;"
+                aria-label="7번 컬러"></button>
+
+
+
+              <button type="button" class="color-more" aria-expanded="false">+2Color</button>
+
+              <button type="button" class="color-close" aria-label="전체 컬러 접기">−</button>
+
+            </div>
+          </div>
+          <div class="badges">
+            <span class="badge best off">BEST</span>
+            <span class="badge new on">NEW</span>
+          </div>
+        </li>
+
+        <li class="product-card-list">
+          <a href="#" class="product-visual">
+            <span class="rank">4</span>
+            <div>
+              <img class="product-img" src="./img/lip-list-img-4.jpg" alt="제품 이미지">
+              <img class="product-img-model" src="./img/lip-list-model-img-4.jpg" alt="제품 모델 이미지">
+            </div>
+          </a>
+          <div class="product-txt">
+            <h2 class="product-name">롬앤 더 쥬시 래스팅 틴트</h2>
+            <p class="price-original"><span>13,000</span>원</p>
+            <div class="discount-txt">
+              <p class="discount">28%</p>
+              <p class="price-discount"><span>9,400</span>원</p>
+            </div>
+          </div>
+          <div class="color-chip">
+            <div class="color-scroll" aria-label="롬앤 더 쥬시 래스팅 틴트 전체 컬러">
+
+              <button type="button" class="color-dot " style="--chip-color: #78383F;" aria-label="1번 컬러"></button>
+
+              <button type="button" class="color-dot " style="--chip-color: #91434B;" aria-label="2번 컬러"></button>
+
+              <button type="button" class="color-dot " style="--chip-color: #A94F58;" aria-label="3번 컬러"></button>
+
+              <button type="button" class="color-dot " style="--chip-color: #C3636D;" aria-label="4번 컬러"></button>
+
+              <button type="button" class="color-dot " style="--chip-color: #DC8790;" aria-label="5번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #641F2A;"
+                aria-label="6번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #762532;"
+                aria-label="7번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #8A2D3B;"
+                aria-label="8번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #9D3746;"
+                aria-label="9번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #B34352;"
+                aria-label="10번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #C75260;"
+                aria-label="11번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #D66370;"
+                aria-label="12번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #E17682;"
+                aria-label="13번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #EC8D98;"
+                aria-label="14번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #F2A6AF;"
+                aria-label="15번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #6C3338;"
+                aria-label="16번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #824146;"
+                aria-label="17번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #995157;"
+                aria-label="18번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #AF636A;"
+                aria-label="19번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #C5787F;"
+                aria-label="20번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #DA9298;"
+                aria-label="21번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #E8ADB2;"
+                aria-label="22번 컬러"></button>
+
+              <button type="button" class="color-dot extra-color" style="--chip-color: #F1CDD0;"
+                aria-label="23번 컬러"></button>
+
+
+
+              <button type="button" class="color-more" aria-expanded="false">+18Color</button>
+
+              <button type="button" class="color-close" aria-label="전체 컬러 접기">−</button>
+
+            </div>
+          </div>
+          <div class="badges">
+            <span class="badge best off">BEST</span>
+            <span class="badge new on">NEW</span>
+          </div>
+        </li>
+      </ul>
+      <div class="bestseller-btn">
+        <a href="#">VIEW MORE</a>
+      </div>
+    </div>
 
     <!-- SNS -->
     <div class="section-sns common-frame">
@@ -507,7 +785,7 @@
     </div>
     <!-- 화면 상단으로 이동하는 플로팅 버튼 -->
     <div class="btn-top" aria-label="화면 상단으로 이동">↑</div>
-    
+
     <!-- 푸터 -->
     <footer class="pc">
       <div class="foot-con1">
@@ -550,7 +828,7 @@
         </div>
       </div>
     </footer>
-    
+
     <!-- 태블릿 + 모바일 공용 푸터 (1024px 이하) -->
     <div class="pad-footer">
       <div class="foot-con1">
@@ -593,5 +871,5 @@
     </div>
   </main>
 </body>
-</html>
 
+</html>
