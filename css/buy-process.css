@@ -1,6 +1,7 @@
 .product-detail-layout {
     display: flex;
     gap: var(--space-normal);
+    margin-top: 9.75rem;
     padding-top: var(--space-3x-large);
     padding-bottom: var(--space-2x-large);
 }
@@ -178,9 +179,11 @@
 .option-list {
     min-height: 180px;
     max-height: 320px;
-    overflow-y: hidden; /* PC: JS로 제어하므로 숨김 */
+    overflow-y: hidden;
+    /* PC: JS로 제어하므로 숨김 */
     overflow-x: hidden;
-    scroll-behavior: smooth; /* JS 스크롤 시 부드럽게 */
+    scroll-behavior: smooth;
+    /* JS 스크롤 시 부드럽게 */
 }
 
 .share-btn {
@@ -192,6 +195,10 @@
 @media (max-width: 1024px) {
     html {
         font-size: var(--fs-pad);
+    }
+
+    .product-detail-layout {
+        margin-top: 5.714rem;
     }
 
     .big-img img {
@@ -208,7 +215,8 @@
     .option-list {
         min-height: auto;
         max-height: 160px;
-        overflow-y: auto;  /* 모바일: 자연 스크롤 */
+        overflow-y: auto;
+        /* 모바일: 자연 스크롤 */
     }
 
     /* 모바일은 스크롤바 숨김 */
@@ -232,6 +240,10 @@
 @media (max-width: 1024px) {
     html {
         font-size: var(--fs-pad, 14px);
+    }
+
+    .product-detail-layout {
+        margin-top: 4.166rem;
     }
 
     .product-detail-layout {
@@ -283,7 +295,8 @@
     .option-list {
         min-height: auto;
         max-height: 160px;
-        overflow-y: auto;  /* 모바일: 자연 스크롤 */
+        overflow-y: auto;
+        /* 모바일: 자연 스크롤 */
     }
 
     /* 모바일은 스크롤바 숨김 */
