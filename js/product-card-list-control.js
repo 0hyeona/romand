@@ -7,7 +7,7 @@ if (productCardUlTag) {
     // 컬러가 5개 이하인 상품에 is-short 클래스를 붙여 컬러칩 가운데 정렬에 사용
     const result = productArray.map((product,) => `
         <li class="product-card-list">
-            <a href="#" class="product-visual">
+            <a href="${product.link}" class="product-visual">
                     <img class="product-img" src="./img/${product.plipImgName}" alt="제품 이미지">
                     <img class="product-img-model" src="./img/${product.plipModelName}" alt="제품 모델 이미지">
             </a>

@@ -6,7 +6,7 @@ const productCardUlTag = document.querySelector('.product-card');
 if (productCardUlTag) {
     const result = productArray.map((product, index) => `
         <li class="product-card-list">
-            <a href="#" class="product-visual">
+            <a href="${product.plink}" class="product-visual">
                 <span class="rank">${index + 1}</span>
                 <div>
                     <img class="product-img" src="./img/${product.plipImgName}" alt="제품 이미지">
