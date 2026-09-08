@@ -1,0 +1,360 @@
+/* common-frame 위아래 여백 추가 */
+.list {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+}
+
+/* h1 제목명 */
+.common-frame .section {
+    font-size: var(--fs--h1);
+    font-weight: var(--fw2);
+    text-align: center;
+    padding-bottom: 4rem;
+}
+
+/* 좌측 우측 나눔 */
+.content {
+    display: flex;
+    gap: 1rem;
+}
+
+/* 컨텐츠 내용 */
+/* ✅ left : right = 6 : 4 비율로 같이 줄어들게 */
+.content-left {
+    flex: 6;
+    /* 비율 */
+    min-width: 0;
+    /* flex 안에서 내용이 넘치지 않게 */
+}
+
+/* 체크박스 */
+/* 체크박스 기본 스타일 제거 */
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* 크기 및 배경색 설정 */
+    /* pad 20px / mobile 18px */
+    width: 24px;
+    height: 24px;
+    /* ✅ 체크박스가 찌그러지지 않게 고정 */
+    flex-shrink: 0;
+
+    background-color: var(--gray-0);
+    border: 1px solid var(--pink-5);
+    border-radius: 2px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    /* 부드러운 변경 효과 */
+}
+
+/* 1. 체크된 상태의 스타일 설정 (배경색 변경) */
+input[type="checkbox"]:checked {
+    background-color: var(--pink-5);
+}
+
+/* 2. 체크 표시 아이콘 (이미지 사용) */
+input[type="checkbox"]:checked::after {
+    content: '';
+    /* 텍스트 content는 비워둡니다 */
+
+    /* 아이콘 크기 설정 */
+    width: 12px;
+    height: 10px;
+
+    /* 아이콘 이미지 설정 */
+    background-image: url('../img/check.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    /* 이미지가 영역 안에 꽉 차게 */
+}
+
+/* 전체 선택 부분 */
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.list-header {
+    display: flex;
+    /* pad: 8 / mobile : 4 */
+    gap: 12px;
+    padding-bottom: 2rem;
+}
+
+.list-header span {
+    font-size: var(--fs--h4);
+    font-weight: var(--fw2);
+}
+
+/* 체크된 상태의 스타일 설정 */
+input[type="checkbox"]:checked {
+    background-color: var(--pink-5);
+}
+
+.content-left ul .cart-list {
+    /* border: 1px solid red; */
+    display: flex;
+    gap: 1rem;
+}
+
+/* 체크박스 및 이미지 */
+.card-list figure {
+    display: flex;
+    justify-content: center;
+    aspect-ratio: 145 / 154;
+}
+
+.cart-list figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 상품 정보들 */
+.cart-info {
+    width: 51rem;
+    /* 원하는 너비로 */
+}
+
+.cart-info .product-desc {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+
+.cart-info .product-desc .product-name {
+    font-size: var(--fs--h4);
+    font-weight: var(--fw2);
+}
+
+.cart-info .product-option {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 2rem;
+}
+
+.cart-info .product-option p {
+    color: var(--gray-4);
+    font-size: var(--fs-body1);
+}
+
+.cart-info .product-option .btn-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pink-5);
+    border-radius: .5rem;
+    padding: 0 .5rem;
+    height: 1.375rem;
+}
+
+.cart-info .product-option .btn-bg p {
+    font-size: var(--fs-detail);
+    color: var(--gray-0);
+}
+
+.product-sub {
+    /* border: 1px solid gold; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-sub .product-price .price-original {
+    color: var(--gray-4);
+    display: flex;
+    gap: 0px;
+    font-size: var(--fs--body1);
+}
+
+.product-sub .product-price .price-original span:nth-of-type(1) {
+    text-decoration: line-through;
+}
+
+.price-re {
+    display: flex;
+    gap: .25rem;
+}
+
+.price-re .price-sale-per {
+    color: var(--main);
+    font-size: var(--fs--h4);
+    font-weight: var(--fw2);
+}
+
+.price-re .price-sale-price {
+    color: var(--gray-9);
+    font-size: var(--fs--h4);
+    font-weight: var(--fw2);
+}
+
+.counter {
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .4rem;
+}
+
+.counter figure img {
+    width: 20px;
+    height: 20px;
+}
+
+.close-btn {
+    cursor: pointer;
+}
+/* 우측 */
+.content-right {
+    flex: 4;
+    /* 비율 */
+    min-width: 0;
+}
+
+.content-right .price-info p {
+    font-size: var(--fs--h2);
+    font-weight: var(--fw2);
+    padding-bottom: 2rem;
+}
+
+.content-right .price-info .line {
+    border-bottom: 2px solid var(--gray-9);
+}
+
+/* 각 상품 리스트 */
+.content-right ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: var(--fs--h4);
+    padding: 3rem 0;
+}
+
+.content-right ul li {
+    display: grid;
+    /* [상품명 영억] [남은 공간] [가격 영역] */
+    /* minmax(최소너비, 최대너비) 방식으로 최소 너비 고정 */
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    /* 이름과 가격 사이 minimum 간격 */
+    align-items: center;
+}
+
+.content-right ul li .name {
+    color: var(--gray-7);
+}
+
+.content-right ul li .price {
+    color: var(--gray-9);
+    font-weight: var(--fw2);
+    text-align: right;
+
+}
+
+/* 가격 정보 */
+.content-right .guide .line {
+    border-top: 1px solid var(--gray-3);
+    padding-top: 2rem;
+}
+
+.content-right .guide .total {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 80px;
+}
+
+.content-right .guide .total .total-guide {
+    font-size: var(--fs--h2);
+    font-weight: var(--fw2);
+}
+
+.content-right .guide .total .total-price {
+    font-size: var(--fs--h2);
+    font-weight: var(--fw2);
+}
+
+/* 버튼 */
+.content-right .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    font-size: var(--fs--h3);
+    font-weight: var(--fw2);
+    text-align: center;
+}
+
+.content-right .buttons .order {
+    background-color: var(--pink-5);
+    color: var(--gray-0);
+    padding: 1rem 0;
+}
+
+.content-right .buttons .shopping {
+    border: 1px solid var(--pink-5);
+    color: var(--pink-5);
+    background-color: var(--gray-0);
+    padding: 1rem 0;
+}
+
+
+@media (max-width: 1024px) {
+    html {
+        font-size: var(--fs-pad);
+    }
+
+    input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }
+
+    .close-btn {
+        height: 20px;
+    }
+
+    .close-btn img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .content-right .guide .total {
+        padding-bottom: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: var(--fs-mobile);
+    }
+
+    input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+    }
+
+    .content {
+        flex-direction: column;
+        /* 좌우 → 위아래로 */
+    }
+
+    .content {
+        gap: 0;
+    }
+
+    .content-left {
+        padding-bottom: 3rem;
+    }
+
+    .content-right .guide .total {
+        padding-bottom: 60px;
+    }
+
+}
