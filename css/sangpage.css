@@ -7,7 +7,8 @@
 
 /* 내부 이미지 스타일 (필요시 추가) */
 .sangpage figure {
-    margin: 0; /* figure 기본 여백 제거 */
+    margin: 0;
+    /* figure 기본 여백 제거 */
 }
 
 .sangpage img {
@@ -16,24 +17,59 @@
     display: block;
 }
 
-
-.sangpage .pad, .sangpage .mobile { 
+.sangpage .pad,
+.sangpage .mobile {
     display: none;
 }
 
+/* 상세페이지 위에 문구 */
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 10rem;
+}
+
+.con {
+    font-size: var(--fs--h2);
+    font-weight: var(--fw2);
+    padding-bottom: 2rem;
+}
+
+.con.on {
+    color: var(--main);
+    border-bottom: 3px solid var(--main);
+}
+
 @media (max-width: 1024px) {
-    .sangpage .pc, .sangpage.mobile {
+
+    .sangpage .pc,
+    .sangpage.mo {
         display: none;
     }
+
     .sangpage .pad {
-        display:block;
+        display: block;
+    }
+    
+    .section {
+        gap: 8rem;
     }
 }
+
 @media (max-width: 768px) {
-    .sangpage .pad, .sangpage .pc {
+
+    .sangpage .pad,
+    .sangpage .pc {
         display: none;
     }
+
     .sangpage .mobile {
-        display:block;
+        display: block;
+    }
+
+    .section {
+        gap: 4rem;
     }
 }
