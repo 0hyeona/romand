@@ -163,3 +163,9 @@
   font-size: var(--fs--h4);
   font-weight: var(--fw2);
 }
+/* option.css에 추가 */
+.option-item.is-selected {
+    background-color: var(--pink-0);
+    border-color: var(--pink-3);
+    font-weight: var(--fw2);
+}
