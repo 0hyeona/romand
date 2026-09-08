@@ -11,9 +11,58 @@
     <link rel="stylesheet" href="./css/product-recommend.css">
     <script src="./js/product-recommend.js" defer></script>
     <script src="./js/product-recommend-control.js" defer></script>
+    <script src="./js/product-recommend-popup.js" defer></script>
 </head>
 
 <body>
+    <div class="recommend-modal"></div>
+    <div class="recommend-popup">
+        <div class="popup-ctl">
+            <p>옵션을 선택해 주세요</p>
+            <span class="popup-close">X</span>
+        </div>
+        <div class="product-info">
+            <figure class="product-img">
+                <img src="./img/lip-list-model-img-1.jpg" alt="롬앤 글래스팅 컬러 글로스">
+            </figure>
+            <div class="popup-product-txt">
+                <span class="popup-product-name">롬앤 글래스팅 컬러 글로스</span>
+                <span class="popup-product-price">9,400원</span>
+            </div>
+        </div>
+        <div class="option">
+            <div class="option-title">필수</div>
+            <div class="select-option">
+                <div class="option-toggle">
+                    <span class="selected-option">옵션을 선택해 주세요</span>
+                    <span class="option-arrow">
+                        <img src="./img/up-arrow.svg" alt="옵션 열고닫기 아이콘">
+                    </span>
+                </div>
+                <ul class="option-list">
+                    <li>
+                        <span class="option-color"></span>피오니 발레
+                    </li>
+                    <li>
+                        <span class="option-color"></span>너티 베이그
+                    </li>
+                    <li>
+                        <span class="option-color"></span>로즈 핀치
+                    </li>
+                    <li>
+                        <span class="option-color"></span>그레이피 웨이
+                    </li>
+                    <li>
+                        <span class="option-color"></span>딤 모브
+                    </li>
+                    <li>
+                        <span class="option-color"></span>디픈 무어
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="incart">담기</div>
+    </div>
     <div class="product-recommend">
         <h1>추천 상품</h1>
         <div class="product-card-list-wrap">
