@@ -2,11 +2,11 @@
     padding: var(--space-2x-large) 0;
 }
 
-.pc {
+.banner-img .pc {
     display: block;
 }
 
-.pad, .mobile {
+.banner-img .pad, .banner-img .mobile {
     display: none;
 }
 
@@ -18,23 +18,23 @@
 }
 
 @media (max-width : 1024px) {
-    .pad {
+    .banner-img .pad {
         display: block;
     }
-    .pc, .mobile {
+    .banner-img .pc, .banner-img .mobile {
         display: none;
     }
 }
 
 @media (max-width : 768px) {
-    .mobile {
+    .banner-img  .mobile {
         display: block;
     }
-    .pc, .pad {
+    .banner-img .pc, .banner-img  .pad {
         display: none;
     }
 
-    .mobile figure {
+    .banner-img .mobile figure {
         width: 100%;
         margin: 0;
     }
