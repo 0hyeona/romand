@@ -1,8 +1,12 @@
 .recommend-modal {
-    /* display: none; */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     position: fixed;
     z-index: 999;
     background-color: rgba(0, 0, 0, .75);
+    display: none;
 }
 
 .recommend-modal.on {
@@ -10,7 +14,7 @@
 }
 
 .recommend-popup {
-    /* display: none; */
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -23,10 +27,11 @@
     box-shadow: 4px 4px 30px rgba(0, 0, 0, .25);
     border-radius: 1rem;
     padding: 3rem;
+    flex-direction: column;
 }
 
 .recommend-popup.on {
-    display: block;
+    display: flex;
 }
 
 .popup-ctl {
@@ -35,11 +40,13 @@
     font-size: var(--fs--h2);
     font-weight: var(--fw2);
     margin-bottom: 2rem;
+    flex-shrink: 0;
 }
 
 .product-info {
     display: flex;
     gap: 1rem;
+    flex-shrink: 0;
 }
 
 .product-info .product-img {
@@ -74,6 +81,8 @@
     display: flex;
     margin-top: 1rem;
     justify-content: center;
+    flex: 1;
+    min-height: 0;
 }
 
 .option-title {
@@ -87,20 +96,28 @@
 
 .select-option {
     flex: 0 0 86%;
+    --option-height: calc(3.5rem + 2px);
+    position: relative;
+    align-self: flex-start;
+    min-width: 0;
 }
 
 .option-arrow {
     line-height: 0;
     width: 22px;
     aspect-ratio: 1/1;
+    transition: transform .2s ease;
 }
-.option-arrow img{
+
+.option-arrow img {
     width: 100%;
     height: 100%;
 }
 
 .option-toggle {
-    padding: 1rem 2rem;
+    height: var(--option-height);
+    box-sizing: border-box;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -108,22 +125,40 @@
     font-size: var(--fs--h4);
     color: var(--gray-6);
     border-radius: .5rem;
+    cursor: pointer;
 }
 
 .option-list {
     width: 100%;
     font-size: var(--fs--h4);
-    height: 156px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    height: calc(var(--option-height) * 3);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .option-list li {
-    padding: 1rem 2rem;
+    height: var(--option-height);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
     border: 1px solid var(--gray-4);
     border-radius: .5rem;
+    background-color: #fff;
+    cursor: pointer;
 }
 
-.incart{
+.incart {
     text-align: center;
     background-color: var(--pink-5);
     font-size: var(--fs--h3);
@@ -131,11 +166,44 @@
     color: #fff;
     border-radius: .5rem;
     padding: 1.5rem 0;
+    flex-shrink: 0;
+    cursor: pointer;
 }
 
 
+.popup-close {
+    cursor: pointer;
+}
 
+.option-toggle[aria-expanded="true"] .option-arrow {
+    transform: rotate(180deg);
+}
 
+.select-option.has-selection .selected-option {
+    color: #000;
+}
+
+.option-list::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.option-color {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    flex: 0 0 1.5rem;
+    border-radius: 50%;
+    margin-right: .75rem;
+    background-color: var(--option-chip-color);
+}
+
+.selected-option {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
 
 /* 추천 상품 카드리스트 스타일 */
 .product-recommend {
@@ -265,7 +333,7 @@
     font-weight: var(--fw2);
 }
 
-#popup-open{
+#popup-open {
     margin-top: 1rem;
     padding: 1rem 2rem;
     background-color: var(--pink-5);
@@ -417,6 +485,15 @@
         font-size: var(--fs-pad);
     }
 
+    .recommend-popup {
+        width: 660px;
+        height: 670px;
+    }
+
+    .product-info .product-img {
+        width: 200px;
+    }
+
     .product-card {
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 1rem;
@@ -439,6 +516,28 @@
 @media(max-width:768px) {
     html {
         font-size: var(--fs-mobile);
+    }
+
+    .recommend-popup {
+        width: 302px;
+        height: 458px;
+    }
+
+    .product-info .product-img {
+        width: 130px;
+    }
+
+    .popup-product-txt {
+        padding: 0;
+        gap: 1rem;
+    }
+
+    .option-list {
+        height: calc(var(--option-height) * 2);
+    }
+
+    .option-arrow {
+        width: 16px;
     }
 
     .bestseller {

@@ -19,7 +19,8 @@
     <div class="recommend-popup">
         <div class="popup-ctl">
             <p>옵션을 선택해 주세요</p>
-            <span class="popup-close">X</span>
+            <!-- 수정: 닫기 버튼의 기본 접근성 속성을 HTML로 이동 -->
+            <span class="popup-close" role="button" tabindex="0" aria-label="팝업 닫기">X</span>
         </div>
         <div class="product-info">
             <figure class="product-img">
@@ -33,35 +34,44 @@
         <div class="option">
             <div class="option-title">필수</div>
             <div class="select-option">
-                <div class="option-toggle">
+                <!-- 수정: 옵션 열림 상태와 연결할 목록을 HTML에 선언 -->
+                <div class="option-toggle" role="button" tabindex="0" aria-expanded="false" aria-haspopup="listbox" aria-controls="recommend-option-list">
                     <span class="selected-option">옵션을 선택해 주세요</span>
                     <span class="option-arrow">
                         <img src="./img/up-arrow.svg" alt="옵션 열고닫기 아이콘">
                     </span>
                 </div>
-                <ul class="option-list">
-                    <li>
+                <!-- 수정: 옵션 목록은 처음에 숨기고 기본 접근성 속성을 선언 -->
+                <ul class="option-list" id="recommend-option-list" role="listbox" aria-label="상품 옵션" hidden>
+                    <!-- 수정: 옵션 항목의 키보드 접근 및 초기 선택 상태 -->
+                    <li role="option" tabindex="0" aria-selected="false">
                         <span class="option-color"></span>피오니 발레
                     </li>
-                    <li>
+                    <!-- 수정: 옵션 항목의 키보드 접근 및 초기 선택 상태 -->
+                    <li role="option" tabindex="0" aria-selected="false">
                         <span class="option-color"></span>너티 베이그
                     </li>
-                    <li>
+                    <!-- 수정: 옵션 항목의 키보드 접근 및 초기 선택 상태 -->
+                    <li role="option" tabindex="0" aria-selected="false">
                         <span class="option-color"></span>로즈 핀치
                     </li>
-                    <li>
+                    <!-- 수정: 옵션 항목의 키보드 접근 및 초기 선택 상태 -->
+                    <li role="option" tabindex="0" aria-selected="false">
                         <span class="option-color"></span>그레이피 웨이
                     </li>
-                    <li>
+                    <!-- 수정: 옵션 항목의 키보드 접근 및 초기 선택 상태 -->
+                    <li role="option" tabindex="0" aria-selected="false">
                         <span class="option-color"></span>딤 모브
                     </li>
-                    <li>
+                    <!-- 수정: 옵션 항목의 키보드 접근 및 초기 선택 상태 -->
+                    <li role="option" tabindex="0" aria-selected="false">
                         <span class="option-color"></span>디픈 무어
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="incart">담기</div>
+        <!-- 수정: 담기 버튼의 기본 속성을 HTML로 이동 (비활성화 없음) -->
+        <div class="incart" role="button" tabindex="0">담기</div>
     </div>
     <div class="product-recommend">
         <h1>추천 상품</h1>
@@ -88,7 +98,8 @@
                         <span class="badge best off">BEST</span>
                         <span class="badge new on">NEW</span>
                     </div>
-                    <div id="popup-open"><span>담기</span></div>
+                    <!-- 수정: 담기 버튼의 키보드 접근 속성을 HTML로 이동 -->
+                    <div id="popup-open" role="button" tabindex="0"><span>담기</span></div>
                 </li>
             </ul>
         </div>
@@ -96,3 +107,4 @@
 </body>
 
 </html>
+

@@ -49,7 +49,8 @@ if (productCardUlTag) {
                 <span class="badge best ${product.badgeBest}">BEST</span>
                 <span class="badge new ${product.badgeNew}">NEW</span>
             </div>
-            <div id="popup-open"><span>담기</span></div>
+            <!-- 수정: 동적으로 생성되는 담기 버튼의 기본 접근성 속성 -->
+            <div id="popup-open" role="button" tabindex="0"><span>담기</span></div>
         </li>
     `).join('');
     productCardUlTag.innerHTML = result;
@@ -161,3 +162,4 @@ function formatNumberWithCommas(value, locale = 'ko-KR') {
 if (typeof window !== 'undefined') {
     window.formatNumberWithCommas = formatNumberWithCommas;
 }
+
