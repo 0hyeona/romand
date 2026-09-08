@@ -72,22 +72,6 @@
     opacity: 1;
 }
 
-
-.rank {
-    position: absolute;
-    z-index: 3;
-    top: 0;
-    left: 0;
-    width: 2.875rem;
-    aspect-ratio: 1/1;
-    background: var(--pink-5);
-    color: #fff;
-    font-size: var(--fs--h4);
-    display: grid;
-    place-items: center;
-    pointer-events: none;
-}
-
 .product-txt {
     display: flex;
     flex-direction: column;
@@ -130,29 +114,6 @@
 
 .price-discount span {
     font-weight: var(--fw2);
-}
-
-
-.bestseller-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.bestseller-btn a {
-    padding: .5rem 2rem;
-    max-width: 160px;
-    aspect-ratio: 160/38;
-    background-color: var(--gray-0);
-    color: var(--pink-2);
-    font-weight: var(--fw2);
-    border: 1px solid var(--pink-5);
-}
-
-.bestseller-btn:hover a {
-    background-color: var(--pink-5);
-    color: var(--gray-0);
-
 }
 
 /* 처음에는 5개 컬러칩과 +Color만 표시하고, 펼치면 전체 컬러를 가로 스크롤로 확인하는 기능 */
