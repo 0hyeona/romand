@@ -209,6 +209,9 @@ input[type="checkbox"]:checked {
     height: 20px;
 }
 
+.close-btn {
+    cursor: pointer;
+}
 /* 우측 */
 .content-right {
     flex: 4;
