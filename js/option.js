@@ -25,9 +25,18 @@ trigger.addEventListener('click', function () {
     optionBox.classList.add('stage-2');
 });
 
+
 // 모든 옵션 항목에 클릭 이벤트 등록 - 2단계 진행
 optionItems.forEach(function (item) {
     item.addEventListener('click', function () {
+        // 1. 모든 옵션에서 선택 표시 제거
+        optionItems.forEach(function (el) {
+            el.classList.remove('is-selected');
+        });
+
+        // 2. 클릭한 옵션에만 선택 표시
+        item.classList.add('is-selected');
+
         // html 버튼 태그 안에 data-name이 있거나 없으면 텍스트 가져와 공백을 제거
         const selectedText = item.dataset.name || item.textContent.trim();
         // 클릭한 색상 정보를 저장함
@@ -108,6 +117,19 @@ optionItems.forEach(function (item) {
 });
 
 
-//  기능 추가해야될 것 
-// 1. 중복으로 선택한다면 여러 개 배열로 저장해서 담는 변수를 하나 만들 것
-// 2. 2번에서 밖에 누르거나 아이콘을 눌렀을 시 1번으로 변경되도록
+//  기능 추가해야될 것
+// 2번에서 밖에 누르거나 아이콘을 눌렀을 시 1번으로 변경되도록
+// 외부 클릭 시 선택 초기화
+// 외부 클릭 시 옵션창 닫기 (선택된 상태는 유지)
+document.addEventListener('click', function (e) {
+
+    // 클릭한 곳이 옵션박스 안이면 아무것도 안 함
+    if (optionBox.contains(e.target)) return;
+
+    // 옵션이 열려있을 때만 닫기
+    if (optionBox.classList.contains('is-open')) {
+        optionBox.classList.remove('is-open');
+        optionBox.classList.remove('stage-2');
+    }
+
+});
