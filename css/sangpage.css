@@ -1,0 +1,39 @@
+.sangpage {
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+/* 내부 이미지 스타일 (필요시 추가) */
+.sangpage figure {
+    margin: 0; /* figure 기본 여백 제거 */
+}
+
+.sangpage img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.sangpage .pad, .sangpage .mobile { 
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .sangpage .pc, .sangpage.mobile {
+        display: none;
+    }
+    .sangpage .pad {
+        display:block;
+    }
+}
+@media (max-width: 768px) {
+    .sangpage .pad, .sangpage .pc {
+        display: none;
+    }
+    .sangpage .mobile {
+        display:block;
+    }
+}
