@@ -167,6 +167,10 @@
         font-size: var(--fs-pad);
     }
 
+    .product-review {
+        padding: 6rem 48px;
+    }
+
     .star {
         width: 20px;
         aspect-ratio: 1/1;
@@ -217,6 +221,10 @@
 
     html {
         font-size: var(--fs-mobile);
+    }
+
+    .product-review {
+        padding: 6rem 1rem;
     }
 
     .star {
