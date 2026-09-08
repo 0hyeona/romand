@@ -1,8 +1,4 @@
-// const train = document.querySelector('.slider-train');
-// const sliderButtonPrev = document.querySelector('.slider-button.prev');
-// const sliderButtonNext = document.querySelector('.slider-button.next');
-
-
+// 슬라이더
 const reviewSliderWraps =
     document.querySelectorAll('.review-slider-wrap');
 
@@ -16,7 +12,22 @@ reviewSliderWraps.forEach((sliderWrap) => {
 
     const sliderButtonNext =
         sliderWrap.querySelector('.slider-button.next');
+
+    const paginationDots =
+        sliderWrap.querySelectorAll('.review-pagination img');
+
     let count = 0;
+
+    /* 현재 count와 같은 도트만 on 이미지로 표시하고 나머지는 off 이미지로 변경 */
+    function updatePagination() {
+        paginationDots.forEach((dot, index) => {
+            if (index === count) {
+                dot.src = './img/review-dot-on.svg';
+            } else {
+                dot.src = './img/review-dot-off.svg';
+            }
+        });
+    }
 
     function moveSlide() {
         // CSS의 2rem을 브라우저가 계산한 px 값으로 가져옴
@@ -27,6 +38,8 @@ reviewSliderWraps.forEach((sliderWrap) => {
 
         train.style.transform =
             `translateX(calc(${-33.3333 * count}% - ${gapCorrection}px))`;
+
+        updatePagination();
     }
     /* 다음 버튼을 누르면 다음 리뷰 두 장을 표시하고 마지막 다음에는 처음으로 돌아감 */
     sliderButtonNext.addEventListener('click', (event) => {
@@ -53,4 +66,18 @@ reviewSliderWraps.forEach((sliderWrap) => {
 
         moveSlide();;
     });
+});
+
+// 팝업 열기,닫기
+const popup = document.querySelector('.popup');
+const popupOpen = document.querySelectorAll('.popup-open');
+const popupClose = document.querySelector('.popup-close');
+popupOpen.forEach((openButton) => {
+    openButton.addEventListener('click', () => {
+        popup.classList.add('on');
+        popup.scrollTop = 0;
+    });
+});
+popupClose.addEventListener('click', () => {
+    popup.classList.remove('on');
 });
