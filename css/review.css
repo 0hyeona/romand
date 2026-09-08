@@ -169,10 +169,10 @@
 
 /* 팝업 스타일 */
 
-.popup.on{
+.popup.on {
     width: 610px;
     height: 900px;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -188,9 +188,11 @@
     border-radius: 1rem;
     box-shadow: 4px 4px 30px 0 rgba(0, 0, 0, 0.25);
 }
-.popup{
+
+.popup {
     display: none;
 }
+
 .popup::-webkit-scrollbar {
     width: .5rem;
 }
@@ -236,7 +238,7 @@
     cursor: pointer;
 }
 
-.product-info {
+.product-review .product-info {
     display: flex;
     gap: 1rem;
 }
@@ -325,6 +327,13 @@
     justify-content: space-between;
     font-size: var(--fs-body1);
     color: var(--gray-6);
+    align-items: center;
+}
+
+.review-react div{
+    flex-shrink: 0;
+    align-items: center;
+    white-space: nowrap;
 }
 
 .review-react .like-coment {
@@ -406,7 +415,7 @@
 
     /* 팝업 스타일 */
 
-    .popup.on{
+    .popup.on {
         width: 510px;
         height: 713px;
     }
@@ -520,7 +529,7 @@
 
     /* 팝업 스타일 */
 
-    .popup.on{
+    .popup.on {
         width: 272px;
         height: 466px;
     }

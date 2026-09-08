@@ -30,7 +30,7 @@
 
     <!-- 리뷰 연결 -->
     <link rel="stylesheet" href="./css/review.css">
-    <script src="./js/review-slider.js" defer></script>
+    <script src="./js/review.js" defer></script>
 </head>
 
 <body>
@@ -587,16 +587,73 @@
             </div>
         </div>
 
-        <!-- 리뷰 -->
+        <!-- 리뷰 모달 팝업 -->
+        <div class="popup">
+            <div class="popup-ctl">
+                <p>리뷰 상세 보기</p>
+                <span class="popup-close">X</span>
+            </div>
+            <div class="product-info">
+                <figure><img src="./img/lip-list-img-1.jpg" alt="롬앤 글래스팅 컬러 글로스 사진"></figure>
+                <div class="product-info-txt">
+                    <p>롬앤 글래스팅 컬러 글로스</p>
+                    <span><img src="./img/star-off.svg" alt="별점 아이콘">4.8 (358)</span>
+                </div>
+            </div>
+            <div class="thumbnail-big"><img src="./img/review1.jpg" alt="리뷰 사진 1"></div>
+            <ul class="thumbnail-small">
+                <li><img src="./img/review1-1.jpg" alt="리뷰 사진 2"></li>
+                <li><img src="./img/review1-2.jpg" alt="리뷰 사진 3"></li>
+            </ul>
+            <div class="reviewer-info">
+                <p class="reviewer">김*자</p>
+                <div class="moreinfo">
+                    <p class="date">2026.08.27</p>
+                    <p>구매옵션: 피오니 발레</p>
+                </div>
+            </div>
+            <div class="stars">
+                <img src="./img/star-on.svg" alt="상품 별점 아이콘">
+                <img src="./img/star-on.svg" alt="상품 별점 아이콘">
+                <img src="./img/star-on.svg" alt="상품 별점 아이콘">
+                <img src="./img/star-on.svg" alt="상품 별점 아이콘">
+                <img src="./img/star-on.svg" alt="상품 별점 아이콘">
+            </div>
+            <p class="review-txt">
+                진짜 너무 예뻐요... 여쿨라라면 무조건 품어야 하는 컬러입니다! 탁기 없이 맑고 뽀용한 피오니 핑크 컬러인데, 입술에 올리면 과하지 않게 자연스럽게 스며들면서 유리알 광택이 촤르르
+                올라와요.
+                생얼에 이것만 슥 얹어줘도 얼굴에 확 생기가 도는 느낌이라 요즘 매일 들고 다닙니다.
+            </p>
+            <div class="review-react">
+                <div class="like-coment">
+                    <div class="like">
+                        <img src="./img/like-icon.svg" alt="유용해요 아이콘">
+                        <p>유용해요 <span>10</span></p>
+                    </div>
+                    <div class="coment">
+                        <img src="./img/coment-icon.svg" alt="댓글 아이콘">
+                        <p>댓글 <span>3</span></p>
+                    </div>
+                </div>
+                <div class="block">
+                    <p>신고 &middot; 차단</p>
+                </div>
+            </div>
+            <div class="total-coment">
+                댓글 <span>1</span>
+            </div>
+        </div>
+
+        <!-- 리뷰 슬라이더 -->
         <div class="product-review pc-pad">
             <div class="review-summary">
                 <div class="review-star">
                     <img src="./img/yellow-star.svg" alt="별점 아이콘" class="star">
-                    <p>4.2</p>
+                    <p>4.8</p>
                 </div>
                 <span>&middot;</span>
                 <div class="review-count">
-                    <p>리뷰 +999개</p>
+                    <p>리뷰 358개</p>
                 </div>
             </div>
             <div class="review-safisfacion">
@@ -611,7 +668,7 @@
                     <div class="inner-frame">
                         <div class="slider-station">
                             <ul class="slider-train">
-                                <li class="review-card">
+                                <li class="review-card popup-open">
                                     <div class="inner-frame">
                                         <div class="review-txt">
                                             <div class="stars">
@@ -799,11 +856,11 @@
             <div class="review-summary">
                 <div class="review-star">
                     <img src="./img/yellow-star.svg" alt="별점 아이콘" class="star">
-                    <p>4.2</p>
+                    <p>4.8</p>
                 </div>
                 <span>&middot;</span>
                 <div class="review-count">
-                    <p>리뷰 +999개</p>
+                    <p>리뷰 358개</p>
                 </div>
             </div>
             <div class="review-safisfacion">
@@ -818,7 +875,7 @@
                     <div class="inner-frame">
                         <div class="slider-station">
                             <ul class="slider-train">
-                                <li class="review-card">
+                                <li class="review-card popup-open">
                                     <div class="inner-frame">
                                         <div class="review-txt">
                                             <div class="stars">
