@@ -2,6 +2,7 @@
 .list {
     padding-top: 6rem;
     padding-bottom: 3rem;
+    margin-top: 8rem;
 }
 
 /* h1 제목명 */
@@ -76,7 +77,8 @@ input[type="checkbox"]:checked::after {
 }
 
 /* 전체 선택 부분 */
-ul {
+.content-left ul,
+.content-right ul {
     display: flex;
     flex-direction: column;
     gap: 3rem;
@@ -212,6 +214,7 @@ input[type="checkbox"]:checked {
 .close-btn {
     cursor: pointer;
 }
+
 /* 우측 */
 .content-right {
     flex: 4;
@@ -309,6 +312,10 @@ input[type="checkbox"]:checked {
 @media (max-width: 1024px) {
     html {
         font-size: var(--fs-pad);
+    }
+
+    .list {
+        margin-top: initial;
     }
 
     input[type="checkbox"] {

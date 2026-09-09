@@ -296,7 +296,7 @@
     align-items: center;
 }
 
-.product-name {
+.product-txt .product-name {
     font-weight: var(--fw2);
     font-size: var(--fs--h4);
     width: 100%;
@@ -339,7 +339,6 @@
     background-color: var(--pink-5);
     text-align: center;
     color: #fff;
-    border-radius: .5rem;
     font-size: var(--fs--h4);
     font-weight: var(--fw2);
     cursor: pointer;
