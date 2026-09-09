@@ -5,7 +5,6 @@
 }
 
 .sns-img-section .pc {
-    margin: 0 auto;
     padding: 6rem;
 }
 
@@ -41,5 +40,11 @@
 
     .sns-img-section .mobile {
         display: block;
+        padding: 2rem; /* 모바일은 패딩 더 줄이기 */
+        width: 100%;
+    }
+
+    .sns-img-section .mobile img {
+        width: 100%;
     }
 }
