@@ -36,7 +36,7 @@ let productArray = [
     },
     {
         pid: 2,
-                link: '#',
+        link: '#',
         pname: '글래스팅 멜팅 밤',
         price: 13000,
         pdiscount: 0.28,
@@ -53,7 +53,7 @@ let productArray = [
     },
     {
         pid: 3,
-                link: '#',
+        link: '#',
         pname: '롬앤 더 쥬시 래스팅 틴트',
         price: 13000,
         pdiscount: 0.28,
