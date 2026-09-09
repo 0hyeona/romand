@@ -70,14 +70,25 @@ reviewSliderWraps.forEach((sliderWrap) => {
 
 // 팝업 열기,닫기
 const popup = document.querySelector('.popup');
+const modal = document.querySelector('.modal');
 const popupOpen = document.querySelectorAll('.popup-open');
 const popupClose = document.querySelector('.popup-close');
+const lockBodyScroll = () => {
+    document.body.style.overflow = 'hidden';
+};
+
+const unlockBodyScroll = () => {
+    document.body.style.overflow = '';
+};
+
 popupOpen.forEach((openButton) => {
     openButton.addEventListener('click', () => {
         popup.classList.add('on');
         popup.scrollTop = 0;
+        lockBodyScroll();
     });
 });
 popupClose.addEventListener('click', () => {
     popup.classList.remove('on');
+    unlockBodyScroll();
 });
