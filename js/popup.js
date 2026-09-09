@@ -1,6 +1,6 @@
 const popup = document.querySelector('.popup');
 const modal = document.querySelector('.modal');
-const popupClose = document.querySelector('#popup-close');
+const popupClose = document.querySelector('.popup-close');
 
 const lockBodyScroll = () => {
   document.body.style.overflow = 'hidden';
