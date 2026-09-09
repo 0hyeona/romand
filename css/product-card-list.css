@@ -249,6 +249,21 @@
     display: inline-block;
 }
 
+/* 페이지네이션 기능 추가입니돵 */
+.page {
+    font-size: var(--fs-body1);
+    font-weight: 300;
+    color: var(--gray-9);
+    display: flex;
+    gap: .5rem;
+    cursor: pointer;
+}
+
+.page .on { 
+    font-weight: 900;
+    color: #000;
+}
+
 
 /* 반응형 */
 @media(max-width:1024px) {
