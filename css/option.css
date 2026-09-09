@@ -16,6 +16,16 @@
 .option-list {
   display: none;
   margin-top: 0.5rem;
+  max-height: 250px;
+  /* 원하는 최대 높이 지정 (필수) */
+  overflow-y: auto;
+  /* 내용이 넘치면 세로 스크롤 생성 (필수) */
+
+  /* (선택) 터치 기기 부드러운 스크롤 */
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: none;
+  
 }
 
 .option-trigger,
@@ -84,22 +94,27 @@
 
 /* 색상 정보 */
 .option-color-pink1 {
-  background-color: #e6858f;
+  background-color: #9A777E;
 }
+
 .option-color-pink2 {
-  background-color: #ce8573;
+  background-color: #B1848C;
 }
+
 .option-color-pink3 {
-  background-color: #ca6768;
+  background-color: #C999A1;
 }
+
 .option-color-pink4 {
-  background-color: #bb5e74;
+  background-color: #DCB4BA;
 }
+
 .option-color-pink5 {
-  background-color: #cb6a69;
+  background-color: #EAD8DC;
 }
+
 .option-color-pink6 {
-  background-color: #b45448;
+  background-color: #724047;
 }
 
 .option-summary {
@@ -155,17 +170,20 @@
   font-size: var(--fs-body1);
   font-weight: var(--fw2);
 }
+
 .counter img {
   cursor: pointer;
 }
+
 .price {
   display: flex;
   font-size: var(--fs--h4);
   font-weight: var(--fw2);
 }
+
 /* option.css에 추가 */
 .option-item.is-selected {
-    background-color: var(--pink-0);
-    border-color: var(--pink-3);
-    font-weight: var(--fw2);
+  background-color: var(--pink-0);
+  border-color: var(--pink-3);
+  font-weight: var(--fw2);
 }
