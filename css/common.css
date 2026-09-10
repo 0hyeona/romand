@@ -93,6 +93,10 @@ html {
   font-weight: var(--fw1);
 }
 
+body {
+  background-color: #fff;
+}
+
 /* 데스크탑 패딩 */
 .common-frame {
   padding: 0 var(--space-2x-large);
