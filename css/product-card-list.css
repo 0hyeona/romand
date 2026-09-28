@@ -251,11 +251,12 @@
 
 /* 페이지네이션 기능 추가입니돵 */
 .page {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
     font-size: var(--fs-body1);
     font-weight: 300;
     color: var(--gray-9);
-    display: flex;
-    gap: .5rem;
     cursor: pointer;
 }
 

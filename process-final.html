@@ -4,34 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rom&nd 리디자인</title>
+    <title>주문 / 결제 | rom&nd</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/font.css">
-
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/btn-top.css">
-    <link rel="stylesheet" href="./css/index2-banner.css">
-    <link rel="stylesheet" href="./css/list-header.css">
-    <link rel="stylesheet" href="./css/product-card-list.css">
     <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/product-img-depth.css">
+    <link rel="stylesheet" href="./css/process-final.css?v=9">
 
-    <script src="./js/product-img-depth.js" defer></script>
     <script src="./js/header.js" defer></script>
     <script src="./js/btn-top.js" defer></script>
-    <script src="./js/list-header.js" defer></script>
-    <script src="./js/product-card-list.js" defer></script>
-    <script src="./js/product-card-list-control.js" defer></script>
-
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js" defer></script>
+    <script src="./js/process-final.js?v=9" defer></script>
     <!-- 파비콘 -->
     <link rel="icon" type="image/svg+xml" href="./img/favicon.svg">
+
+
 </head>
 
 <body>
-    <!-- 화면 상단으로 이동하는 플로팅 버튼 -->
-    <div class="btn-top" aria-label="화면 상단으로 이동">↑</div>
-
     <!-- 데스크탑용 헤더 -->
     <header class="pc">
         <div class="header-top">
@@ -79,17 +71,17 @@
                     </li>
                     <!-- NEW -->
                     <li>
-                        <a href="#">NEW</a>
+                        <a href="./index-2.html">NEW</a>
                         <div class="gnb2depths">
                             <div class="common-frame">
                                 <section>
-                                    <h4><a href="#">NEW</a></h4>
+                                    <h4><a href="./index-2.html">NEW</a></h4>
                                 </section>
                                 <section>
-                                    <h4><a href="#">신제품</a></h4>
+                                    <h4><a href="./index-2.html">신제품</a></h4>
                                     <ul>
-                                        <li><a href="#">전체 신제품</a></li>
-                                        <li><a href="#">이달의 신제품</a></li>
+                                        <li><a href="./index-2.html">전체 신제품</a></li>
+                                        <li><a href="./index-2.html">이달의 신제품</a></li>
                                     </ul>
                                 </section>
                                 <section>
@@ -111,19 +103,19 @@
                     </li>
                     <!-- SHOP -->
                     <li>
-                        <a href="#">SHOP</a>
+                        <a href="./index-2.html">SHOP</a>
                         <div class="gnb2depths">
                             <div class="common-frame">
                                 <section>
-                                    <h4><a href="#">SHOP</a></h4>
+                                    <h4><a href="./index-2.html">SHOP</a></h4>
                                 </section>
                                 <section>
                                     <h4><a href="./index-2.html">LIP</a></h4>
                                     <ul>
-                                        <li><a href="#">틴트</a></li>
-                                        <li><a href="#">립스틱</a></li>
-                                        <li><a href="#">립글로즈/립밤</a></li>
-                                        <li><a href="#">립라이너</a></li>
+                                        <li><a href="./index-2.html">틴트</a></li>
+                                        <li><a href="./index-2.html">립스틱</a></li>
+                                        <li><a href="./index-2.html">립글로즈/립밤</a></li>
+                                        <li><a href="./index-2.html">립라이너</a></li>
                                     </ul>
                                 </section>
                                 <section>
@@ -157,7 +149,7 @@
                     </li>
                     <!-- EVENT -->
                     <li>
-                        <a href="#">EVENT</a>
+                        <a href="./index-2.html">EVENT</a>
                         <div class="gnb2depths">
                             <div class="common-frame">
                                 <section>
@@ -180,15 +172,6 @@
                                     </ul>
                                 </section>
                                 <section>
-                                    <h4><a href="#">FACE</a></h4>
-                                    <ul>
-                                        <li><a href="#">쿠션 / 파운데이션</a></li>
-                                        <li><a href="#">파우더 / 팩트</a></li>
-                                        <li><a href="#">블러셔</a></li>
-                                        <li><a href="#">쉐딩 / 하이라이터</a></li>
-                                    </ul>
-                                </section>
-                                <section>
                                     <h4><a href="#">리뷰</a></h4>
                                     <ul>
                                         <li><a href="#">베스트 리뷰</a></li>
@@ -200,7 +183,7 @@
                     </li>
                     <!-- ABOUT US -->
                     <li>
-                        <a href="#">ABOUT US</a>
+                        <a href="./index.html">ABOUT US</a>
                         <div class="gnb2depths">
                             <div class="common-frame">
                                 <section>
@@ -289,7 +272,7 @@
                             <img src="./img/icon-search.svg" alt="검색 아이콘" />
                         </button>
                     </div>
-                    <a href="./index-4.html">
+                    <a href="#">
                         <img src="./img/icon-cart.svg" alt="장바구니 아이콘" />
                     </a>
                     <a href="#">
@@ -301,10 +284,10 @@
         <div class="smart-overlay-menu-top">
             <div class="common-frame">
                 <ul class="gnb-smart">
-                    <li class="on"><a href="#">NEW</a></li>
+                    <li class="on"><a href="./index-2.html">NEW</a></li>
                     <li><a href="./index-2.html">SHOP</a></li>
-                    <li><a href="#">EVENT</a></li>
-                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="./index-2.html">EVENT</a></li>
+                    <li><a href="./index.html">ABOUT US</a></li>
                 </ul>
             </div>
         </div>
@@ -312,14 +295,14 @@
             <ul class="gnb-smart-list">
                 <!-- 1 NEW -->
                 <li>
-                    <a href="#" class="gnb-smart-title">NEW</a>
+                    <a href="./index-2.html" class="gnb-smart-title">NEW</a>
                     <div class="gnb2depths-smart">
                         <div class="common-frame">
                             <section>
-                                <h4><a href="#">신상품</a></h4>
+                                <h4><a href="./index-2.html">신상품</a></h4>
                                 <ul>
-                                    <li><a href="#">전체 신제품</a></li>
-                                    <li><a href="#">이달의 신제품</a></li>
+                                    <li><a href="./index-2.html">전체 신제품</a></li>
+                                    <li><a href="./index-2.html">이달의 신제품</a></li>
                                 </ul>
                             </section>
                             <section>
@@ -341,16 +324,16 @@
                 </li>
                 <!-- 2 SHOP -->
                 <li>
-                    <a href="#" class="gnb-smart-title">SHOP</a>
+                    <a href="./index-2.html" class="gnb-smart-title">SHOP</a>
                     <div class="gnb2depths-smart">
                         <div class="common-frame">
                             <section>
                                 <h4><a href="./index-2.html">LIP</a></h4>
                                 <ul>
-                                    <li><a href="#">틴트</a></li>
-                                    <li><a href="#">립스틱</a></li>
-                                    <li><a href="#">립글로즈 / 립밤</a></li>
-                                    <li><a href="#">립 라이너</a></li>
+                                    <li><a href="./index-2.html">틴트</a></li>
+                                    <li><a href="./index-2.html">립스틱</a></li>
+                                    <li><a href="./index-2.html">립글로즈 / 립밤</a></li>
+                                    <li><a href="./index-2.html">립 라이너</a></li>
                                 </ul>
                             </section>
                             <section>
@@ -384,7 +367,7 @@
                 </li>
                 <!-- 3 EVENT -->
                 <li>
-                    <a href="#" class="gnb-smart-title">EVENT</a>
+                    <a href="./index-2.html" class="gnb-smart-title">EVENT</a>
                     <div class="gnb2depths-smart">
                         <div class="common-frame">
                             <section>
@@ -415,7 +398,7 @@
                 </li>
                 <!-- 4 ABOUT US -->
                 <li>
-                    <a href="#" class="gnb-smart-title">ABOUT US</a>
+                    <a href="./index.html" class="gnb-smart-title">ABOUT US</a>
                     <div class="gnb2depths-smart">
                         <div class="common-frame">
                             <section>
@@ -455,141 +438,231 @@
         </div>
     </div>
 
-    <!-- 상품 카드 리스트 화면 배너 -->
-    <div class="banner">
-        <figure class="pc">
-            <img src="./img/banner4-pc.jpg" alt="롬앤 상품카드리스트 화면 상단 배너">
-        </figure>
-        <figure class="pad">
-            <img src="./img/banner4-pad.jpg" alt="롬앤 상품카드리스트 화면 상단 배너">
-        </figure>
-        <figure class="mo">
-            <img src="./img/banner4-mobile.jpg" alt="롬앤 상품카드리스트 화면 상단 배너">
-        </figure>
-    </div>
+    <main class="order-page common-frame">
+        <h1>주문 / 결제</h1>
 
-    <!-- 이미지 뎁스 -->
-    <ul class="img-depth">
-        <li><a href="./index-2.html"><img src="./img/depth-lip.jpg" alt="립 상품리스트 바로가기"><span class="on">LIP</span></a>
-        </li>
-        <li><a href="#"><img src="./img/depth-eye.jpg" alt="아이 상품리스트 바로가기"><span>EYE</span></a></li>
-        <li><a href="#"><img src="./img/depth-base.jpg" alt="베이스 상품리스트 바로가기"><span>BASE</span></a></li>
-        <li><a href="#"><img src="./img/depth-face.jpg" alt="페이스 상품리스트 바로가기"><span>FACE</span></a></li>
-        <li><a href="#"><img src="./img/depth-nail.jpg" alt="네일 상품리스트 바로가기"><span>NAIL</span></a></li>
-        <li><a href="#"><img src="./img/depth-set.jpg" alt="세트 상품리스트 바로가기"><span>SET</span></a></li>
-    </ul>
+        <div class="order-layout">
+            <form class="order-form" id="order-form">
+                <section class="order-section product-section" aria-labelledby="product-title">
+                    <h2 id="product-title">구매 상품</h2>
+                    <ul class="product-list">
+                        <li class="product-item">
+                            <figure class="product-image">
+                                <img src="./img/process-final/pro1.jpg" alt="더 쥬시 래스팅 틴트 블랙 컬러">
+                            </figure>
+                            <div class="product-copy">
+                                <strong>
+                                    [TOP2] 더 쥬시 래스팅 틴트 (+틴뚜링 증정)</strong>
+                                <span>25 블랙 베리</span>
+                            </div>
+                            <span class="product-quantity">1개</span>
+                            <strong class="product-price">9,900원</strong>
+                        </li>
+                        <li class="product-item">
+                            <figure class="product-image">
+                                <img src="./img/process-final/pro2.jpg" alt="더 쥬시 래스팅 틴트 핑크 컬러">
+                            </figure>
+                            <div class="product-copy">
+                                <strong>[TOP2] 더 쥬시 래스팅 틴트 (+틴뚜링 증정)</strong>
+                                <span>14 아몬드 로즈</span>
+                            </div>
+                            <span class="product-quantity">1개</span>
+                            <strong class="product-price">9,900원</strong>
+                        </li>
+                    </ul>
+                </section>
 
-    <!-- 리스트 헤더 -->
-    <div class="list-header">
-        <p class="total-p">총 <span>16</span>개 상품</p>
-        <p class="align">정렬방식 <span><img src="./img/list-header-icon.svg" alt="정렬방식 아이콘"></span></p>
-    </div>
-    <div class="align-list-box-wrap">
-        <ul class="align-list-box">
-            <li class="on"><a href="#">정렬방식</a></li>
-            <li><a href="#">신상품</a></li>
-            <li><a href="#">인기상품</a></li>
-            <li><a href="#">낮은가격</a></li>
-            <li><a href="#">높은가격</a></li>
-        </ul>
-    </div>
-
-    <!-- 상품 카드 리스트 -->
-    <div class="product-card-list-wrap">
-        <ul class="product-card">
-            <li class="product-card-list">
-                <a href="./index-3.html" class="product-visual">
-                    <img class="product-img" src="./img/lip-list-img-1.jpg" alt="제품 이미지">
-                    <img class="product-img-model" src="./img/lip-list-model-img-1.jpg" alt="제품 모델 이미지">
-                </a>
-                <div class="product-txt">
-                    <h2 class="product-name">쥬시 플래시 립 오일(+롬앤 립 랜덤 1종 증정)</h2>
-                    <p class="price-original"><span>14,000</span>원</p>
-                    <div class="discount-txt">
-                        <p class="discount">22%</p>
-                        <p class="price-discount"><span>10,900</span>원</p>
+                <fieldset class="order-section shipping-section">
+                    <legend>배송지</legend>
+                    <div class="field-list">
+                        <div class="form-row">
+                            <label for="recipient">받는 사람<sup aria-label="필수">*</sup></label>
+                            <input id="recipient" name="recipient" type="text" autocomplete="name" required>
+                        </div>
+                        <div class="form-row address-row">
+                            <label for="postcode">주소<sup aria-label="필수">*</sup></label>
+                            <div class="address-fields">
+                                <div class="inline-field">
+                                    <input id="postcode" name="postcode" type="text" inputmode="numeric"
+                                        placeholder="우편번호" readonly required>
+                                    <button id="address-search" class="small-button accent-button" type="button"
+                                        aria-haspopup="dialog" aria-controls="postcode-modal" aria-expanded="false">주소
+                                        검색</button>
+                                </div>
+                                <input id="address" name="address" type="text" placeholder="기본 주소"
+                                    autocomplete="street-address" readonly required>
+                                <input id="address-detail" name="addressDetail" type="text" placeholder="상세 주소 (선택)">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label for="phone">휴대전화<sup aria-label="필수">*</sup></label>
+                            <input id="phone" name="phone" type="tel" inputmode="numeric" maxlength="13"
+                                autocomplete="tel" placeholder="010-1234-5678" required>
+                        </div>
+                        <div class="form-row email-row">
+                            <label for="email-id">이메일<sup aria-label="필수">*</sup></label>
+                            <div class="email-fields">
+                                <input id="email-id" name="emailId" type="text" aria-label="이메일 아이디"
+                                    placeholder="이메일을 입력해주세요." required>
+                                <span aria-hidden="true">@</span>
+                                <select id="email-domain" name="emailDomain" aria-label="이메일 도메인" required>
+                                    <option value="">직접 선택</option>
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="daum.net">daum.net</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label for="delivery-message">배송 요청사항</label>
+                            <select id="delivery-message" name="deliveryMessage">
+                                <option>메시지 직접 선택하기</option>
+                                <option>문 앞에 놓아주세요.</option>
+                                <option>배송 전에 연락해주세요.</option>
+                                <option>경비실에 맡겨주세요.</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="color-chip ">
-                    <div class="color-scroll" aria-label="쥬시 플래시 립 오일(+롬앤 립 랜덤 1종 증정) 전체 컬러">
+                </fieldset>
+
+                <fieldset class="order-section password-section">
+                    <legend>비회원 주문조회 비밀번호</legend>
+                    <div class="field-list">
+                        <div class="form-row password-row">
+                            <label for="order-password">비밀번호</label>
+                            <div class="password-field">
+                                <input id="order-password" name="orderPassword" type="password" minlength="10"
+                                    maxlength="16" aria-describedby="password-help">
+                                <p id="password-help">(영문 대소문자 / 숫자 / 특수문자 중 2가지 이상 조합, 10자 ~ 16자)</p>
+                            </div>
+                        </div>
+                        <div class="form-row password-row">
+                            <label for="order-password-confirm">비밀번호 확인</label>
+                            <input id="order-password-confirm" name="orderPasswordConfirm" type="password"
+                                minlength="10" maxlength="16">
+                        </div>
                     </div>
+                </fieldset>
+
+                <fieldset class="order-section discount-section">
+                    <legend>할인 / 부가 결제</legend>
+                    <div class="discount-fields">
+                        <div class="form-row">
+                            <label for="discount-code">할인 코드 적용</label>
+                            <div class="inline-field discount-code-field">
+                                <input id="discount-code" name="discountCode" type="text" placeholder="할인코드">
+                                <button class="small-button accent-button" type="button">코드 적용</button>
+                            </div>
+                        </div>
+                        <div class="applied-amount">
+                            <strong>적용 금액</strong>
+                            <strong><span>2,600</span>원</strong>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="order-section payment-section">
+                    <legend>결제 수단</legend>
+                    <div class="payment-content">
+                        <div class="payment-tabs" role="group" aria-label="결제 수단 선택">
+                            <button type="button" data-payment="easy" aria-pressed="false">간편 결제</button>
+                            <button class="is-active" type="button" data-payment="card" aria-pressed="true">카드</button>
+                            <button type="button" data-payment="cash" aria-pressed="false">현금</button>
+                            <button type="button" data-payment="mobile" aria-pressed="false">휴대폰</button>
+                        </div>
+                        <div class="payment-panel" data-panel="card">
+                            <div class="form-row">
+                                <label for="card-company">카드 선택</label>
+                                <select id="card-company" name="cardCompany">
+                                    <option value="">카드를 선택해주세요.</option>
+                                    <option>신한카드</option>
+                                    <option>KB국민카드</option>
+                                    <option>현대카드</option>
+                                    <option>삼성카드</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <span class="field-label">할부 기간</span>
+                                <div class="installment-field">
+                                    <input type="text" value="일시불" disabled aria-label="할부 기간">
+                                    <p>법인 카드는 무이자 할부가 적용되지 않습니다.</p>
+                                </div>
+                            </div>
+                            <div class="form-row payment-guide-row">
+                                <span class="field-label">결제 안내</span>
+                                <div class="guide-buttons">
+                                    <button type="button">공인인증서 발급안내</button>
+                                    <button type="button">안심클릭안내</button>
+                                    <button type="button">안심결제(ISP) 안내</button>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="payment-placeholder" data-panel="other" hidden>선택한 결제 수단은 결제 단계에서 안내됩니다.</p>
+                    </div>
+                </fieldset>
+            </form>
+
+            <aside class="payment-summary" aria-labelledby="summary-title">
+                <div class="payment-summary-sticky">
+                    <h2 id="summary-title">결제 정보</h2>
+                    <dl class="summary-card">
+                        <div>
+                            <dt>구매상품</dt>
+                            <dd><strong>19,800</strong>원</dd>
+                        </div>
+                        <div>
+                            <dt>배송비</dt>
+                            <dd><strong>0</strong>원</dd>
+                        </div>
+                        <div>
+                            <dt>할인 / 부가 결제</dt>
+                            <dd class="discount-price"><strong>-2,600</strong>원</dd>
+                        </div>
+                    </dl>
+                    <button class="checkout-button" type="submit" form="order-form">17,200원 결제하기</button>
+                    <p class="form-message" role="status" aria-live="polite"></p>
                 </div>
-                <div class="badges">
-                    <span class="badge best off">BEST</span>
-                    <span class="badge new on">NEW</span>
-                </div>
-            </li>
-        </ul>
-        <div class="page">
-                <span><</span>
-                <span class="on">1</span>
-                <span>2</span>
-                <span>></span>
+            </aside>
         </div>
+    </main>
 
-        <!-- 푸터 -->
-        <footer class="pc">
-            <div class="foot-con1">
-                <figure class="foot-logo">
-                    <img src="./img/foot-logo.svg" alt="롬앤 리디자인 푸터 로고 사진">
-                </figure>
-                <ul class="foot-menu">
-                    <li><a href="#">이용약관</a></li>
-                    <li>|</li>
-                    <li><a href="#">개인정보처리 방침</a></li>
-                    <li>|</li>
-                    <li><a href="#">사업자 정보 확인</a></li>
-                </ul>
-                <div class="copy">© 2026 하이파이프팀 포트폴리오 리디자인 사이트입니다.</div>
+    <div id="postcode-modal" class="postcode-modal" hidden>
+        <button class="postcode-backdrop" type="button" data-postcode-close aria-label="주소 검색 닫기"></button>
+        <section class="postcode-dialog" role="dialog" aria-modal="true" aria-labelledby="postcode-title">
+            <header class="postcode-header">
+                <h2 id="postcode-title">주소 검색</h2>
+                <button class="postcode-close" type="button" data-postcode-close aria-label="주소 검색 닫기">×</button>
+            </header>
+            <div id="postcode-embed" class="postcode-embed">
+                <p class="postcode-loading">주소 검색 서비스를 불러오는 중입니다.</p>
             </div>
-            <div class="con-txt">
-                <div class="foot-con2">
-                    <ul class="address">
-                        <li>주소 <span>서울특별시 강남구 도산대로 328</span></li>
-                        <li>사업자번호 <span>777-77-77777</span></li>
-                    </ul>
-                </div>
-                <div class="foot-con3">
-                    <h4>CUSTOMER CENTER</h4>
-                    <p>1588-2026</p>
-                    <ul>
-                        <li>평일 <span>09:30 - 18:00</span></li>
-                        <li>점심시간 <span>12:00 - 13:00</span></li>
-                        <li><span>토·일 공휴일 휴무</span></li>
-                    </ul>
-                </div>
-                <div class="foot-con4">
-                    <h4>FOLLOW US</h4>
-                    <p>인스타그램과 유튜브에서 다양한 소식을 만나보세요.</p>
-                    <ul class="sns-icon">
-                        <li><a href="#"><img src="./img/kakao.png" alt="롬앤 카카오톡 채널 바로가기"></a></li>
-                        <li><a href="#"><img src="./img/youtube.png" alt="롬앤 유튜브 채널 바로가기"></a></li>
-                        <li><a href="#"><img src="./img/instagram.png" alt="롬앤 인스타그램 계정 바로가기"></a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
+        </section>
+    </div>
 
-        <!-- 태블릿 + 모바일 공용 푸터 (1024px 이하) -->
-        <div class="pad-footer">
-            <div class="foot-con1">
-                <figure class="foot-logo">
-                    <img src="./img/foot-logo.svg" alt="롬앤 리디자인 푸터 로고 사진">
-                </figure>
-                <ul class="foot-menu">
-                    <li><a href="#">이용약관</a></li>
-                    <li>|</li>
-                    <li><a href="#">개인정보처리 방침</a></li>
-                    <li>|</li>
-                    <li><a href="#">사업자 정보 확인</a></li>
+    <!-- 화면 상단으로 이동하는 플로팅 버튼 -->
+    <div class="btn-top" aria-label="화면 상단으로 이동">↑</div>
+
+    <!-- 푸터 -->
+    <footer class="pc">
+        <div class="foot-con1">
+            <figure class="foot-logo">
+                <img src="./img/foot-logo.svg" alt="롬앤 리디자인 푸터 로고 사진">
+            </figure>
+            <ul class="foot-menu">
+                <li><a href="#">이용약관</a></li>
+                <li>|</li>
+                <li><a href="#">개인정보처리 방침</a></li>
+                <li>|</li>
+                <li><a href="#">사업자 정보 확인</a></li>
+            </ul>
+            <div class="copy">© 2026 하이파이프팀 포트폴리오 리디자인 사이트입니다.</div>
+        </div>
+        <div class="con-txt">
+            <div class="foot-con2">
+                <ul class="address">
+                    <li>주소 <span>서울특별시 강남구 도산대로 328</span></li>
+                    <li>사업자번호 <span>777-77-77777</span></li>
                 </ul>
-                <div class="foot-con2">
-                    <ul class="address">
-                        <li>주소 <span>서울특별시 강남구 도산대로 328</span></li>
-                        <li>사업자번호 <span>777-77-77777</span></li>
-                    </ul>
-                </div>
-                <div class="copy">© 2026 하이파이프팀 포트폴리오 리디자인 사이트입니다.</div>
             </div>
             <div class="foot-con3">
                 <h4>CUSTOMER CENTER</h4>
@@ -610,6 +683,48 @@
                 </ul>
             </div>
         </div>
+    </footer>
+
+    <!-- 태블릿 + 모바일 공용 푸터 -->
+    <div class="pad-footer">
+        <div class="foot-con1">
+            <figure class="foot-logo">
+                <img src="./img/foot-logo.svg" alt="롬앤 리디자인 푸터 로고 사진">
+            </figure>
+            <ul class="foot-menu">
+                <li><a href="#">이용약관</a></li>
+                <li>|</li>
+                <li><a href="#">개인정보처리 방침</a></li>
+                <li>|</li>
+                <li><a href="#">사업자 정보 확인</a></li>
+            </ul>
+            <div class="foot-con2">
+                <ul class="address">
+                    <li>주소 <span>서울특별시 강남구 도산대로 328</span></li>
+                    <li>사업자번호 <span>777-77-77777</span></li>
+                </ul>
+            </div>
+            <div class="copy">© 2026 하이파이프팀 포트폴리오 리디자인 사이트입니다.</div>
+        </div>
+        <div class="foot-con3">
+            <h4>CUSTOMER CENTER</h4>
+            <p>1588-2026</p>
+            <ul>
+                <li>평일 <span>09:30 - 18:00</span></li>
+                <li>점심시간 <span>12:00 - 13:00</span></li>
+                <li><span>토·일 공휴일 휴무</span></li>
+            </ul>
+        </div>
+        <div class="foot-con4">
+            <h4>FOLLOW US</h4>
+            <p>인스타그램과 유튜브에서 다양한 소식을 만나보세요.</p>
+            <ul class="sns-icon">
+                <li><a href="#"><img src="./img/kakao.png" alt="롬앤 카카오톡 채널 바로가기"></a></li>
+                <li><a href="#"><img src="./img/youtube.png" alt="롬앤 유튜브 채널 바로가기"></a></li>
+                <li><a href="#"><img src="./img/instagram.png" alt="롬앤 인스타그램 계정 바로가기"></a></li>
+            </ul>
+        </div>
+    </div>
 </body>
 
 </html>
