@@ -7,6 +7,24 @@ const requestedOptionIndex = Math.max(0, Number(cartParams.get('option')) || 0);
 const cartItemsContainer = document.querySelector('.content-left > ul');
 const paymentItemsContainer = document.querySelector('.content-right .product-info');
 const orderLink = document.querySelector('.cart-order-link');
+const cartStorageKey = 'romandCartItems';
+
+function readStoredCartItems() {
+    try {
+        const storedItems = JSON.parse(localStorage.getItem(cartStorageKey) ?? '[]');
+        return Array.isArray(storedItems) ? storedItems : [];
+    } catch (error) {
+        return [];
+    }
+}
+
+function writeStoredCartItems(items) {
+    try {
+        localStorage.setItem(cartStorageKey, JSON.stringify(items));
+    } catch (error) {
+        // 저장소를 사용할 수 없는 환경에서도 현재 화면의 장바구니 기능은 유지합니다.
+    }
+}
 
 function formatCartPrice(value) {
     return Number(value).toLocaleString('ko-KR');
@@ -25,7 +43,7 @@ function getProductOption(product, optionIndex) {
     };
 }
 
-function addCartProduct(product, optionIndex = 0, quantity = 1) {
+function addCartProduct(product, optionIndex = 0, quantity = 1, checked = true) {
     if (!product || !cartItemsContainer || !paymentItemsContainer) return;
 
     const option = getProductOption(product, optionIndex);
@@ -35,14 +53,14 @@ function addCartProduct(product, optionIndex = 0, quantity = 1) {
     if (existingItem) {
         const countElement = existingItem.querySelector('.counter span');
         countElement.textContent = Number(countElement.textContent) + quantity;
-        existingItem.querySelector('input[type="checkbox"]').checked = true;
+        existingItem.querySelector('input[type="checkbox"]').checked = checked;
         return;
     }
 
     cartItemsContainer.querySelector('.empty-cart')?.remove();
     cartItemsContainer.insertAdjacentHTML('beforeend', `
         <li class="cart-list" data-cart-key="${key}" data-pid="${product.pid}" data-option="${option.index}">
-            <input type="checkbox" checked aria-label="${product.pname} 선택">
+            <input type="checkbox" ${checked ? 'checked' : ''} aria-label="${product.pname} 선택">
             <figure>
                 <img src="./img/${product.plipImgName}" alt="${product.pname}">
             </figure>
@@ -89,12 +107,44 @@ function renderRequestedCartProduct() {
     cartItemsContainer.innerHTML = '';
     paymentItemsContainer.innerHTML = '';
 
-    if (!cartProduct) {
+    const storedItems = readStoredCartItems();
+
+    if (cartProduct) {
+        const option = getProductOption(cartProduct, requestedOptionIndex);
+        const storedItem = storedItems.find(item => item.pid === cartProduct.pid && item.option === option.index);
+
+        if (storedItem) {
+            storedItem.quantity = Math.max(1, Number(storedItem.quantity) || 1) + requestedQuantity;
+            storedItem.checked = true;
+        } else {
+            storedItems.push({
+                pid: cartProduct.pid,
+                option: option.index,
+                quantity: requestedQuantity,
+                checked: true,
+            });
+        }
+
+        writeStoredCartItems(storedItems);
+
+        try {
+            window.history.replaceState(null, '', window.location.href.split('?')[0]);
+        } catch (error) {
+            // 주소 정리가 제한된 환경에서는 기존 주소를 유지합니다.
+        }
+    }
+
+    const validItems = storedItems.filter(item => cartProducts.some(product => product.pid === Number(item.pid)));
+
+    if (!validItems.length) {
         cartItemsContainer.innerHTML = '<li class="empty-cart">장바구니에 담긴 상품이 없습니다.</li>';
         return;
     }
 
-    addCartProduct(cartProduct, requestedOptionIndex, requestedQuantity);
+    validItems.forEach((item) => {
+        const product = cartProducts.find(candidate => candidate.pid === Number(item.pid));
+        addCartProduct(product, Number(item.option) || 0, Math.max(1, Number(item.quantity) || 1), item.checked !== false);
+    });
 }
 
 renderRequestedCartProduct();
@@ -103,6 +153,17 @@ const checkAll = document.querySelector('.list-header input[type="checkbox"]');
 
 function currentCartItems() {
     return [...document.querySelectorAll('.cart-list')];
+}
+
+function saveCurrentCartItems() {
+    const items = currentCartItems().map((item) => ({
+        pid: Number(item.dataset.pid),
+        option: Number(item.dataset.option),
+        quantity: Math.max(1, Number(item.querySelector('.counter span').textContent) || 1),
+        checked: item.querySelector('input[type="checkbox"]')?.checked !== false,
+    }));
+
+    writeStoredCartItems(items);
 }
 
 function updateOrderLink() {
@@ -124,8 +185,13 @@ function updateOrderLink() {
 
 function totalCal() {
     let total = 0;
+    const items = currentCartItems();
 
-    currentCartItems().forEach((item) => {
+    if (!items.length && cartItemsContainer && !cartItemsContainer.querySelector('.empty-cart')) {
+        cartItemsContainer.innerHTML = '<li class="empty-cart">장바구니에 담긴 상품이 없습니다.</li>';
+    }
+
+    items.forEach((item) => {
         const checkbox = item.querySelector('input[type="checkbox"]');
         const unitPrice = Number(item.querySelector('.price-sale-price').dataset.unitPrice);
         const count = Number(item.querySelector('.counter span').textContent);
@@ -150,6 +216,7 @@ if (checkAll) {
         currentCartItems().forEach((item) => {
             item.querySelector('input[type="checkbox"]').checked = checkAll.checked;
         });
+        saveCurrentCartItems();
         totalCal();
     });
 }
@@ -158,6 +225,7 @@ document.addEventListener('change', (event) => {
     if (!event.target.matches('.cart-list input[type="checkbox"]')) return;
     const items = currentCartItems();
     if (checkAll) checkAll.checked = items.length > 0 && items.every((item) => item.querySelector('input').checked);
+    saveCurrentCartItems();
     totalCal();
 });
 
@@ -170,6 +238,7 @@ document.addEventListener('romand:add-to-cart', (event) => {
         const items = currentCartItems();
         checkAll.checked = items.length > 0 && items.every((item) => item.querySelector('input').checked);
     }
+    saveCurrentCartItems();
     totalCal();
 });
 
@@ -182,6 +251,7 @@ document.addEventListener('click', (event) => {
         const cartItem = closeButton.closest('.cart-list');
         document.querySelector(`.product-info li[data-cart-key="${cartItem.dataset.cartKey}"]`)?.remove();
         cartItem.remove();
+        saveCurrentCartItems();
         totalCal();
         return;
     }
@@ -200,6 +270,7 @@ document.addEventListener('click', (event) => {
         countElement.textContent = nextCount;
     }
 
+    saveCurrentCartItems();
     totalCal();
 });
 
