@@ -115,6 +115,10 @@
     border-bottom: 1px solid var(--gray-7);
 }
 
+.guest-account-links a:first-child {
+    display: none;
+}
+
 .remember {
     display: flex;
     align-items: center;
@@ -325,7 +329,6 @@
         margin-top: 3rem;
     }
 
-    .login-form--guest .guest-account-links,
     .login-form--guest .guest-remember {
         display: none;
     }
