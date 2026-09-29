@@ -58,6 +58,13 @@
     display: block;
 }
 
+.detail-thumbnail {
+    display: block;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
 
 /* 상품 정보  */
 .product-info {

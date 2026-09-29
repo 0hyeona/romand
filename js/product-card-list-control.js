@@ -5,14 +5,17 @@ const productCardUlTag = document.querySelector('.product-card');
 
 if (productCardUlTag) {
     // 컬러가 5개 이하인 상품에 is-short 클래스를 붙여 컬러칩 가운데 정렬에 사용
-    const result = productArray.map((product,) => `
+    const result = productArray.map((product,) => {
+        const detailLink = product.link;
+
+        return `
         <li class="product-card-list">
-            <a href="${product.link}" class="product-visual">
-                    <img class="product-img" src="./img/${product.plipImgName}" alt="제품 이미지">
-                    <img class="product-img-model" src="./img/${product.plipModelName}" alt="제품 모델 이미지">
+            <a href="${detailLink}" class="product-visual" aria-label="${product.pname} 상세 보기">
+                    <img class="product-img" src="./img/${product.plipImgName}" alt="${product.pname} 제품 이미지">
+                    <img class="product-img-model" src="./img/${product.plipModelName}" alt="${product.pname} 모델 이미지">
             </a>
             <div class="product-txt">
-                <h2 class="product-name">${product.pname}</h2>
+                <h2 class="product-name"><a href="${detailLink}">${product.pname}</a></h2>
                 <p class="price-original"><span>${formatNumberWithCommas(product.price)}</span>원</p>
                 <div class="discount-txt">
                     <p class="discount">${Math.round(product.pdiscount * 100)}%</p>
@@ -50,7 +53,8 @@ if (productCardUlTag) {
                 <span class="badge new ${product.badgeNew}">NEW</span>
             </div>
         </li>
-    `).join('');
+    `;
+    }).join('');
     productCardUlTag.innerHTML = result;
 
     // 각 상품의 +Color/− 버튼을 감지해 컬러칩을 펼치거나 초기 상태로 되돌림

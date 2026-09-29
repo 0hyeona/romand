@@ -264,3 +264,10 @@ let productArray = [
         badgeNew: 'off',
     },
 ];
+
+productArray.forEach((product) => {
+    product.link = `./index-3.html?pid=${encodeURIComponent(product.pid)}`;
+});
+
+// 목록과 상세 페이지가 같은 상품 데이터를 함께 사용하도록 전역에 공개
+if (typeof window !== 'undefined') window.productArray = productArray;
