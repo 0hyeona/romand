@@ -5,7 +5,7 @@ const productCardUlTag = document.querySelector('.product-card');
 
 if (productCardUlTag) {
     // 컬러가 5개 이하인 상품에 is-short 클래스를 붙여 컬러칩 가운데 정렬에 사용
-    const result = productArray.map((product,) => `
+    const result = recommendProductArray.map((product,) => `
         <li class="product-card-list">
             <a href="${product.link}" class="product-visual">
                     <img class="product-img" src="./img/${product.plipImgName}" alt="제품 이미지">
@@ -50,7 +50,7 @@ if (productCardUlTag) {
                 <span class="badge new ${product.badgeNew}">NEW</span>
             </div>
             <!-- 수정: 동적으로 생성되는 담기 버튼의 기본 접근성 속성 -->
-            <div id="popup-open" role="button" tabindex="0"><span>담기</span></div>
+            <div id="popup-open" role="button" tabindex="0" data-pid="${product.pid}"><span>담기</span></div>
         </li>
     `).join('');
     productCardUlTag.innerHTML = result;
