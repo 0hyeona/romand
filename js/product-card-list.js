@@ -19,7 +19,7 @@ let productArray = [
     },
     {
         pid: 1,
-        link: '#',
+        link: './index-3.html',
         pname: '롬앤 글래스팅 컬러 글로스 컬러',
         price: 13000,
         pdiscount: 0.28,
@@ -36,7 +36,7 @@ let productArray = [
     },
     {
         pid: 2,
-        link: '#',
+        link: './index-3.html',
         pname: '글래스팅 멜팅 밤',
         price: 13000,
         pdiscount: 0.28,
@@ -53,7 +53,7 @@ let productArray = [
     },
     {
         pid: 3,
-        link: '#',
+        link: './index-3.html',
         pname: '롬앤 더 쥬시 래스팅 틴트',
         price: 13000,
         pdiscount: 0.28,
@@ -73,7 +73,7 @@ let productArray = [
     },
     {
         pid: 4,
-        link: '#',
+        link: './index-3.html',
         pname: '롬앤 글래스팅 워터 틴트',
         price: 13000,
         pdiscount: 0.28,
@@ -88,7 +88,7 @@ let productArray = [
     },
     {
         pid: 5,
-        link: '#',
+        link: './index-3.html',
         pname: '롬앤 쉬어 틴티드 스틱',
         price: 14000,
         pdiscount: 0.29,
@@ -106,7 +106,7 @@ let productArray = [
     },
     {
         pid: 6,
-        link: '#',
+        link: './index-3.html',
         pname: '롬앤 제로 매트 립스틱',
         price: 12000,
         pdiscount: 0.26,
@@ -124,7 +124,7 @@ let productArray = [
     },
     {
         pid: 7,
-        link: '#',
+        link: './index-3.html',
         pname: '롬앤 제로 벨벳 틴트',
         price: 13000,
         pdiscount: 0.29,
@@ -140,7 +140,7 @@ let productArray = [
     },
     {
         pid: 8,
-        link: '#',
+        link: './index-3.html',
         pname: '롬앤 립 매터',
         price: 11000,
         pdiscount: 0.19,
@@ -153,7 +153,7 @@ let productArray = [
     },
     {
         pid: 9,
-        link: '#',
+        link: './index-3.html',
         pname: '롬앤 컬러 립 매트',
         price: 13000,
         pdiscount: 0.29,
@@ -169,7 +169,7 @@ let productArray = [
     },
     {
         pid: 10,
-        link: '#',
+        link: './index-3.html',
         pname: '[롬앤 | 미피] 블러피 립 크레용',
         price: 13000,
         pdiscount: 0.24,
@@ -184,7 +184,7 @@ let productArray = [
     },
     {
         pid: 11,
-        link: '#',
+        link: './index-3.html',
         pname: '롬앤 블러 퍼지 틴트',
         price: 13000,
         pdiscount: 0.29,
@@ -200,7 +200,7 @@ let productArray = [
     },
     {
         pid: 12,
-        link: '#',
+        link: './index-3.html',
         pname: '롬앤 글래스팅 워터 글로스',
         price: 13000,
         pdiscount: 0.28,
@@ -218,7 +218,7 @@ let productArray = [
     },
     {
         pid: 13,
-        link: '#',
+        link: './index-3.html',
         pname: '롬앤 베어 워터 틴트',
         price: 12000,
         pdiscount: 0.26,
@@ -234,7 +234,7 @@ let productArray = [
     },
     {
         pid: 14,
-        link: '#',
+        link: './index-3.html',
         pname: '롬앤 글래스팅 멜팅 팟',
         price: 7000,
         pdiscount: 0.30,
@@ -249,7 +249,7 @@ let productArray = [
     },
     {
         pid: 15,
-        link: '#',
+        link: './index-3.html',
         pname: '롬앤 립 메이트 펜슬',
         price: 13000,
         pdiscount: 0.28,

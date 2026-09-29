@@ -19,7 +19,7 @@ let productArray = [
     },
     {
         pid: 1,
-        plink: '#',
+        plink: './index-3.html',
         pname: '롬앤 글래스팅 컬러 글로스 컬러',
         price: 13000,
         pdiscount: 0.28,
@@ -36,7 +36,7 @@ let productArray = [
     },
     {
         pid: 2,
-        plink: '#',
+        plink: './index-3.html',
         pname: '글래스팅 멜팅 밤',
         price: 13000,
         pdiscount: 0.28,
@@ -53,7 +53,7 @@ let productArray = [
     },
     {
         pid: 3,
-        plink: '#',
+        plink: './index-3.html',
         pname: '롬앤 더 쥬시 래스팅 틴트',
         price: 13000,
         pdiscount: 0.28,
