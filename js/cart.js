@@ -8,6 +8,7 @@ const cartItemsContainer = document.querySelector('.content-left > ul');
 const paymentItemsContainer = document.querySelector('.content-right .product-info');
 const orderLink = document.querySelector('.cart-order-link');
 const cartStorageKey = 'romandCartItems';
+const orderStorageKey = 'romandOrderItems';
 
 function readStoredCartItems() {
     try {
@@ -169,18 +170,26 @@ function saveCurrentCartItems() {
 function updateOrderLink() {
     if (!orderLink) return;
 
-    const item = currentCartItems().find((cartItem) => cartItem.querySelector('input[type="checkbox"]')?.checked);
-    if (!item) {
+    const selectedItems = currentCartItems()
+        .filter((item) => item.querySelector('input[type="checkbox"]')?.checked)
+        .map((item) => ({
+            pid: Number(item.dataset.pid),
+            option: Number(item.dataset.option),
+            quantity: Math.max(1, Number(item.querySelector('.counter span').textContent) || 1),
+        }));
+
+    try {
+        localStorage.setItem(orderStorageKey, JSON.stringify(selectedItems));
+    } catch (error) {
+        // 저장소를 사용할 수 없는 환경에서는 링크 상태만 갱신합니다.
+    }
+
+    if (!selectedItems.length) {
         orderLink.href = '#';
         return;
     }
 
-    const params = new URLSearchParams({
-        pid: item.dataset.pid,
-        option: item.dataset.option,
-        qty: item.querySelector('.counter span').textContent,
-    });
-    orderLink.href = `./process-final.html?${params.toString()}`;
+    orderLink.href = './process-final.html?source=cart';
 }
 
 function totalCal() {
