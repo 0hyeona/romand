@@ -27,7 +27,7 @@ if (optionBox) {
         });
 
         if (cartLink) cartLink.href = `./index-4.html?${params.toString()}`;
-        if (buyLink) buyLink.href = `./process-final.html?${params.toString()}`;
+        if (buyLink) buyLink.href = `./index-5.html?${params.toString()}`;
     }
 
     function updateCount() {
