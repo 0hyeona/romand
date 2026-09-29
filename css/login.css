@@ -180,13 +180,6 @@
     display: none;
 }
 
-.login-form--guest .mobile-signup {
-    display: flex;
-    margin-top: 1.5rem;
-    border: 1px solid var(--main);
-    color: var(--pink-4);
-}
-
 .guest-remember {
     display: none;
 }
