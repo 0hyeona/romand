@@ -25,28 +25,31 @@ function getProductOption(product, optionIndex) {
     };
 }
 
-function renderRequestedCartProduct() {
-    if (!cartItemsContainer || !paymentItemsContainer) return;
+function addCartProduct(product, optionIndex = 0, quantity = 1) {
+    if (!product || !cartItemsContainer || !paymentItemsContainer) return;
 
-    if (!cartProduct) {
-        cartItemsContainer.innerHTML = '<li class="empty-cart">장바구니에 담긴 상품이 없습니다.</li>';
-        paymentItemsContainer.innerHTML = '';
+    const option = getProductOption(product, optionIndex);
+    const key = `${product.pid}-${option.index}`;
+    const existingItem = cartItemsContainer.querySelector(`[data-cart-key="${key}"]`);
+
+    if (existingItem) {
+        const countElement = existingItem.querySelector('.counter span');
+        countElement.textContent = Number(countElement.textContent) + quantity;
+        existingItem.querySelector('input[type="checkbox"]').checked = true;
         return;
     }
 
-    const option = getProductOption(cartProduct, requestedOptionIndex);
-    const key = `${cartProduct.pid}-${option.index}`;
-
-    cartItemsContainer.innerHTML = `
-        <li class="cart-list" data-cart-key="${key}" data-pid="${cartProduct.pid}" data-option="${option.index}">
-            <input type="checkbox" checked aria-label="${cartProduct.pname} 선택">
+    cartItemsContainer.querySelector('.empty-cart')?.remove();
+    cartItemsContainer.insertAdjacentHTML('beforeend', `
+        <li class="cart-list" data-cart-key="${key}" data-pid="${product.pid}" data-option="${option.index}">
+            <input type="checkbox" checked aria-label="${product.pname} 선택">
             <figure>
-                <img src="./img/${cartProduct.plipImgName}" alt="${cartProduct.pname}">
+                <img src="./img/${product.plipImgName}" alt="${product.pname}">
             </figure>
             <div class="cart-info">
                 <div class="product-desc">
-                    <div class="product-name">${cartProduct.pname}</div>
-                    <button type="button" class="close-btn" aria-label="${cartProduct.pname} 삭제">
+                    <div class="product-name">${product.pname}</div>
+                    <button type="button" class="close-btn" aria-label="${product.pname} 삭제">
                         <img src="./img/close.svg" alt="">
                     </button>
                 </div>
@@ -56,28 +59,42 @@ function renderRequestedCartProduct() {
                 </div>
                 <div class="product-sub">
                     <div class="product-price">
-                        <div class="price-original"><span>${formatCartPrice(cartProduct.price)}</span><span>원</span></div>
+                        <div class="price-original"><span>${formatCartPrice(product.price)}</span><span>원</span></div>
                         <div class="price-re">
-                            <div class="price-sale-per">${Math.round(cartProduct.pdiscount * 100)}%</div>
-                            <div class="price-sale-price" data-unit-price="${cartProduct.priceDiscount}">${formatCartPrice(cartProduct.priceDiscount)}원</div>
+                            <div class="price-sale-per">${Math.round(product.pdiscount * 100)}%</div>
+                            <div class="price-sale-price" data-unit-price="${product.priceDiscount}">${formatCartPrice(product.priceDiscount)}원</div>
                         </div>
                     </div>
                     <div class="counter">
                         <figure><img src="./img/minus.svg" alt="minus"></figure>
-                        <span>${requestedQuantity}</span>
+                        <span>${quantity}</span>
                         <figure><img src="./img/plus.svg" alt="plus"></figure>
                     </div>
                 </div>
             </div>
         </li>
-    `;
+    `);
 
-    paymentItemsContainer.innerHTML = `
+    paymentItemsContainer.insertAdjacentHTML('beforeend', `
         <li data-cart-key="${key}">
-            <div class="name">${cartProduct.pname}</div>
-            <div class="price">${formatCartPrice(cartProduct.priceDiscount * requestedQuantity)}원</div>
+            <div class="name">${product.pname}</div>
+            <div class="price">${formatCartPrice(product.priceDiscount * quantity)}원</div>
         </li>
-    `;
+    `);
+}
+
+function renderRequestedCartProduct() {
+    if (!cartItemsContainer || !paymentItemsContainer) return;
+
+    cartItemsContainer.innerHTML = '';
+    paymentItemsContainer.innerHTML = '';
+
+    if (!cartProduct) {
+        cartItemsContainer.innerHTML = '<li class="empty-cart">장바구니에 담긴 상품이 없습니다.</li>';
+        return;
+    }
+
+    addCartProduct(cartProduct, requestedOptionIndex, requestedQuantity);
 }
 
 renderRequestedCartProduct();
@@ -141,6 +158,18 @@ document.addEventListener('change', (event) => {
     if (!event.target.matches('.cart-list input[type="checkbox"]')) return;
     const items = currentCartItems();
     if (checkAll) checkAll.checked = items.length > 0 && items.every((item) => item.querySelector('input').checked);
+    totalCal();
+});
+
+document.addEventListener('romand:add-to-cart', (event) => {
+    const product = cartProducts.find((item) => item.pid === Number(event.detail?.pid));
+    if (!product) return;
+
+    addCartProduct(product, Number(event.detail?.option) || 0, Number(event.detail?.quantity) || 1);
+    if (checkAll) {
+        const items = currentCartItems();
+        checkAll.checked = items.length > 0 && items.every((item) => item.querySelector('input').checked);
+    }
     totalCal();
 });
 

@@ -50,7 +50,7 @@ if (productCardUlTag) {
                 <span class="badge new ${product.badgeNew}">NEW</span>
             </div>
             <!-- 수정: 동적으로 생성되는 담기 버튼의 기본 접근성 속성 -->
-            <div id="popup-open" role="button" tabindex="0"><span>담기</span></div>
+            <div id="popup-open" role="button" tabindex="0" data-pid="${product.pid}"><span>담기</span></div>
         </li>
     `).join('');
     productCardUlTag.innerHTML = result;

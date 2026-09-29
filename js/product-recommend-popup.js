@@ -9,6 +9,9 @@
     const selected = popup.querySelector('.selected-option');
     const close = popup.querySelector('.popup-close');
     const cart = popup.querySelector('.incart');
+    const popupImage = popup.querySelector('.product-info .product-img img');
+    const popupProductName = popup.querySelector('.popup-product-name');
+    const popupProductPrice = popup.querySelector('.popup-product-price');
     const options = [...list.querySelectorAll('li')];
     // 수정: 첫 번째 상품의 pcolors에서 옵션 순서대로 기존 span에 색상 데이터 연결
     const optionColors = typeof recommendProductArray !== 'undefined' ? recommendProductArray[0]?.pcolors ?? [] : [];
@@ -37,6 +40,26 @@
     // 수정: 매번 선택 문구·색상·선택 상태·스크롤을 초기화한 뒤 on 클래스로 표시
     function openPopup(trigger) {
         opener = trigger;
+        const product = recommendProductArray.find(item => item.pid === Number(trigger.dataset.pid));
+
+        if (product) {
+            popupImage.src = `./img/${product.plipModelName}`;
+            popupImage.alt = product.pname;
+            popupProductName.textContent = product.pname;
+            popupProductPrice.textContent = `${product.priceDiscount.toLocaleString('ko-KR')}원`;
+
+            options.forEach((option, index) => {
+                const color = product.pcolors?.[index];
+                const chip = option.querySelector('.option-color');
+                option.hidden = !color;
+
+                if (color && chip) {
+                    chip.style.setProperty('--option-chip-color', color);
+                    option.replaceChildren(chip, `${String(index + 1).padStart(2, '0')} 컬러`);
+                }
+            });
+        }
+
         // 수정: 안내 문구로 교체하면서 선택했던 상단 컬러칩도 제거
         selected.textContent = placeholder;
         select.classList.remove('has-selection');
@@ -58,8 +81,23 @@
     }
     bindButton(toggle, () => setOpen(list.hidden));
     bindButton(close, closePopup);
-    // 수정: 담기 버튼은 색상 변경이나 비활성화 없이 팝업을 닫습니다.
-    bindButton(cart, closePopup);
+    // 선택한 추천상품과 컬러 번호를 장바구니 목록에 전달합니다.
+    bindButton(cart, () => {
+        const selectedOptionIndex = options.findIndex(option => option.getAttribute('aria-selected') === 'true');
+        const pid = Number(opener?.dataset.pid);
+
+        if (Number.isInteger(pid)) {
+            document.dispatchEvent(new CustomEvent('romand:add-to-cart', {
+                detail: {
+                    pid,
+                    option: selectedOptionIndex >= 0 ? selectedOptionIndex : 0,
+                    quantity: 1,
+                },
+            }));
+        }
+
+        closePopup();
+    });
     options.forEach(option => {
         bindButton(option, () => {
             selected.textContent = option.textContent.trim();
