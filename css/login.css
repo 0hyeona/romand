@@ -271,6 +271,13 @@
     margin-top: 0;
 }
 
+@media (min-width: 1025px) {
+    .login-panel .mobile-signup,
+    .login-form--guest .mobile-signup {
+        display: none !important;
+    }
+}
+
 @media (max-width: 1280px) and (min-width: 1025px) {
     .login-page {
         padding-right: 2.5rem;
