@@ -1,4 +1,51 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const orderParams = new URLSearchParams(window.location.search);
+    const orderProducts = window.productArray ?? [];
+    const requestedPid = orderParams.has("pid") ? Number(orderParams.get("pid")) : Number.NaN;
+    const orderProduct = orderProducts.find((product) => product.pid === requestedPid);
+    const orderQuantity = Math.max(1, Number(orderParams.get("qty")) || 1);
+    const requestedOptionIndex = Math.max(0, Number(orderParams.get("option")) || 0);
+    const productList = document.querySelector(".product-section .product-list");
+    const summaryValues = document.querySelectorAll(".summary-card dd strong");
+    const checkoutButton = document.querySelector(".checkout-button");
+
+    if (orderProduct && productList) {
+        const colors = orderProduct.pcolors?.length ? orderProduct.pcolors : ["#dddddd"];
+        const optionIndex = Math.min(requestedOptionIndex, colors.length - 1);
+        const optionName = orderProduct.pcolors?.length
+            ? `${String(optionIndex + 1).padStart(2, "0")} 컬러`
+            : "단일 상품";
+        const originalTotal = orderProduct.price * orderQuantity;
+        const saleTotal = orderProduct.priceDiscount * orderQuantity;
+        const discountTotal = originalTotal - saleTotal;
+        const formatPrice = (value) => Number(value).toLocaleString("ko-KR");
+
+        productList.innerHTML = `
+            <li class="product-item" data-pid="${orderProduct.pid}" data-option="${optionIndex}">
+                <figure class="product-image">
+                    <img src="./img/${orderProduct.plipImgName}" alt="${orderProduct.pname}">
+                </figure>
+                <div class="product-copy">
+                    <strong>${orderProduct.pname}</strong>
+                    <span><i class="order-color-chip" style="background-color:${colors[optionIndex]}"></i>${optionName}</span>
+                </div>
+                <span class="product-quantity">${orderQuantity}개</span>
+                <strong class="product-price">${formatPrice(saleTotal)}원</strong>
+            </li>
+        `;
+
+        if (summaryValues[0]) summaryValues[0].textContent = formatPrice(originalTotal);
+        if (summaryValues[1]) summaryValues[1].textContent = "0";
+        if (summaryValues[2]) summaryValues[2].textContent = `-${formatPrice(discountTotal)}`;
+        if (checkoutButton) checkoutButton.textContent = `${formatPrice(saleTotal)}원 결제하기`;
+    } else if (productList) {
+        productList.innerHTML = '<li class="product-item">선택된 상품이 없습니다.</li>';
+        if (summaryValues[0]) summaryValues[0].textContent = "0";
+        if (summaryValues[1]) summaryValues[1].textContent = "0";
+        if (summaryValues[2]) summaryValues[2].textContent = "0";
+        if (checkoutButton) checkoutButton.textContent = "0원 결제하기";
+    }
+
     const paymentButtons = document.querySelectorAll("[data-payment]");
     const cardPanel = document.querySelector('[data-panel="card"]');
     const otherPanel = document.querySelector('[data-panel="other"]');

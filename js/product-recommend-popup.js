@@ -11,7 +11,7 @@
     const cart = popup.querySelector('.incart');
     const options = [...list.querySelectorAll('li')];
     // 수정: 첫 번째 상품의 pcolors에서 옵션 순서대로 기존 span에 색상 데이터 연결
-    const optionColors = typeof productArray !== 'undefined' ? productArray[0]?.pcolors ?? [] : [];
+    const optionColors = typeof recommendProductArray !== 'undefined' ? recommendProductArray[0]?.pcolors ?? [] : [];
     options.forEach((option, index) => {
         const chip = option.querySelector('.option-color');
         if (chip && optionColors[index]) {

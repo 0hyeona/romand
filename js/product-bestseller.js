@@ -72,3 +72,7 @@ let productArray = [
         badgeNew: 'on',
     },
 ];
+
+productArray.forEach((product) => {
+    product.plink = `./index-3.html?pid=${encodeURIComponent(product.pid)}`;
+});

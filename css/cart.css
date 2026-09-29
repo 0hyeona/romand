@@ -212,7 +212,25 @@ input[type="checkbox"]:checked {
 }
 
 .close-btn {
+    border: 0;
+    background: transparent;
     cursor: pointer;
+}
+
+.cart-color-chip {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: .5rem;
+    border: 1px solid rgba(0, 0, 0, .08);
+    border-radius: 50%;
+    vertical-align: -.15rem;
+}
+
+.empty-cart {
+    padding: 4rem 1rem;
+    color: var(--gray-4);
+    text-align: center;
 }
 
 /* 우측 */

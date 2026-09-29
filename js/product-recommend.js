@@ -1,4 +1,4 @@
-let productArray = [
+let recommendProductArray = [
     {
         pid: 0,
         link: './index-3.html',
@@ -72,3 +72,7 @@ let productArray = [
         badgeNew: 'on',
     },
 ];
+
+recommendProductArray.forEach((product) => {
+    product.link = `./index-3.html?pid=${encodeURIComponent(product.pid)}`;
+});

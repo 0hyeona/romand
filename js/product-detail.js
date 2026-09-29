@@ -58,7 +58,7 @@
                 : `${String(index + 1).padStart(2, '0')} 컬러`;
 
             return `
-                <button type="button" class="option-item" data-name="${optionName}">
+                <button type="button" class="option-item" data-name="${optionName}" data-color-index="${index}" data-color="${color}">
                     <span class="option-color" style="background-color: ${color}"></span>
                     ${optionName}
                 </button>

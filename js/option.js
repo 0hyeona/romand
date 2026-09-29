@@ -13,8 +13,22 @@ if (optionBox) {
     const counterBox = optionBox.querySelector('.option-summary');
     const money = optionBox.querySelector('.money');
     const totalAmount = document.querySelector('.purchase-summary p:last-child');
+    const cartLink = document.querySelector('.purchase-actions .btn-secondary');
+    const buyLink = document.querySelector('.purchase-actions .btn-primary');
     const unitPrice = Number(window.currentProduct?.priceDiscount ?? 9400);
+    let selectedOptionIndex = 0;
     let count = 1;
+
+    function updateActionLinks() {
+        const params = new URLSearchParams({
+            pid: String(window.currentProduct?.pid ?? 0),
+            option: String(selectedOptionIndex),
+            qty: String(Math.max(1, count)),
+        });
+
+        if (cartLink) cartLink.href = `./index-4.html?${params.toString()}`;
+        if (buyLink) buyLink.href = `./process-final.html?${params.toString()}`;
+    }
 
     function updateCount() {
         count = Math.max(0, count);
@@ -24,6 +38,7 @@ if (optionBox) {
         const totalPrice = unitPrice * count;
         money.textContent = totalPrice.toLocaleString('ko-KR');
         totalAmount.textContent = `${totalPrice.toLocaleString('ko-KR')}원`;
+        updateActionLinks();
     }
 
     trigger.addEventListener('click', function () {
@@ -39,6 +54,7 @@ if (optionBox) {
 
             const selectedText = item.dataset.name || item.textContent.trim();
             const selectedColor = item.querySelector('.option-color');
+            selectedOptionIndex = Number(item.dataset.colorIndex ?? 0);
             optionValue.textContent = selectedText;
 
             if (selectedColor && triggerColor) {
@@ -70,4 +86,6 @@ if (optionBox) {
         if (optionBox.contains(event.target)) return;
         optionBox.classList.remove('is-open', 'stage-2');
     });
+
+    updateActionLinks();
 }
