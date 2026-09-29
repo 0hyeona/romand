@@ -189,7 +189,7 @@ function updateOrderLink() {
         return;
     }
 
-    orderLink.href = './process-final.html?source=cart';
+    orderLink.href = './index-5.html?source=cart';
 }
 
 function totalCal() {
